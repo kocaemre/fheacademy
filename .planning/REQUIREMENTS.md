@@ -30,11 +30,11 @@
 
 ### Platform & Navigation
 
-- [ ] **PLAT-01**: Sidebar navigation with week/lesson tree, active state highlighting, and completion indicators
+- [x] **PLAT-01**: Sidebar navigation with week/lesson tree, active state highlighting, and completion indicators
 - [ ] **PLAT-02**: Landing page with hero section, curriculum overview, week structure, and Zama-branded CTA
 - [ ] **PLAT-03**: Dashboard showing overall progress, per-week progress cards, and "Continue Learning" button
 - [ ] **PLAT-04**: Week overview pages with learning objectives, lesson list, homework preview, and week progress bar
-- [ ] **PLAT-05**: Individual lesson pages using hardcoded TSX with full component access
+- [x] **PLAT-05**: Individual lesson pages using hardcoded TSX with full component access
 
 ### Core Components
 
@@ -55,7 +55,7 @@
 
 ### Design & Theme
 
-- [ ] **DSGN-01**: Zama-inspired dark theme — gold (#F5C518) primary, purple (#8B5CF6) secondary, dark backgrounds
+- [x] **DSGN-01**: Zama-inspired dark theme — gold (#F5C518) primary, purple (#8B5CF6) secondary, dark backgrounds
 - [ ] **DSGN-02**: Shiki-powered VS Code-grade syntax highlighting with Solidity language support
 - [ ] **DSGN-03**: Responsive layout — desktop-first with tablet/mobile support
 - [ ] **DSGN-04**: Visual FHE concept diagrams — encryption lifecycle, ACL flow, decryption model
@@ -126,11 +126,11 @@
 | HW-05 | Phase 3 | Pending |
 | HW-06 | Phase 5 | Pending |
 | HW-07 | Phase 3 | Pending |
-| PLAT-01 | Phase 2 | Pending |
+| PLAT-01 | Phase 2 | Complete |
 | PLAT-02 | Phase 5 | Pending |
 | PLAT-03 | Phase 5 | Pending |
 | PLAT-04 | Phase 3 | Pending |
-| PLAT-05 | Phase 2 | Pending |
+| PLAT-05 | Phase 2 | Complete |
 | COMP-01 | Phase 2 | Pending |
 | COMP-02 | Phase 2 | Pending |
 | COMP-03 | Phase 2 | Pending |
@@ -142,7 +142,7 @@
 | AUTH-03 | Phase 4 | Pending |
 | AUTH-04 | Phase 4 | Pending |
 | AUTH-05 | Phase 4 | Pending |
-| DSGN-01 | Phase 2 | Pending |
+| DSGN-01 | Phase 2 | Complete |
 | DSGN-02 | Phase 2 | Pending |
 | DSGN-03 | Phase 5 | Pending |
 | DSGN-04 | Phase 5 | Pending |

@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v0.9
 milestone_name: milestone
-status: unknown
-last_updated: "2026-03-03T14:53:48.095Z"
+status: in-progress
+last_updated: "2026-03-03T15:28:01Z"
 progress:
-  total_phases: 1
+  total_phases: 5
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 14
+  completed_plans: 3
 ---
 
 # Project State
@@ -18,33 +18,34 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-03)
 
 **Core value:** Developers can follow a structured, hands-on FHEVM curriculum with side-by-side code comparisons, quizzes, and graded homework on a polished Zama-branded platform.
-**Current focus:** Phase 1: Foundation and FHEVM Research
+**Current focus:** Phase 2: Platform Shell and Core Components
 
 ## Current Position
 
-Phase: 1 of 5 (Foundation and FHEVM Research) -- COMPLETE
-Plan: 2 of 2 in current phase (all plans complete)
-Status: Phase 1 Complete -- Ready for Phase 2
-Last activity: 2026-03-03 -- Completed 01-01-PLAN.md (Next.js scaffold + Vercel deployment)
+Phase: 2 of 5 (Platform Shell and Core Components)
+Plan: 1 of 2 in current phase
+Status: Executing Phase 2 -- Plan 01 complete, Plan 02 next
+Last activity: 2026-03-03 -- Completed 02-01-PLAN.md (Navigation shell + sidebar + routing)
 
-Progress: [██░░░░░░░░] 14%
+Progress: [██░░░░░░░░] 21%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 10min
-- Total execution time: 0.35 hours
+- Total plans completed: 3
+- Average duration: 8min
+- Total execution time: 0.42 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Foundation | 2 | 21min | 10min |
+| 2. Shell & Components | 1 | 4min | 4min |
 
 **Recent Trend:**
-- Last 5 plans: 9min, 12min
-- Trend: Consistent
+- Last 5 plans: 9min, 12min, 4min
+- Trend: Accelerating
 
 *Updated after each plan completion*
 
@@ -65,6 +66,10 @@ Recent decisions affecting current work:
 - [01-01]: Exact dependency pinning (no ^ or ~) for reproducible builds
 - [01-01]: Zama brand colors as CSS custom properties: gold #F5C518, purple #8B5CF6, dark #0A0A0F
 - [01-01]: Vercel deployment live at fheacademy.vercel.app
+- [02-01]: Curriculum data in lib/curriculum.ts is single source of truth for all navigation and routing
+- [02-01]: Route group (academy) isolates sidebar layout from standalone root page
+- [02-01]: Shiki vitesse-dark theme for code highlighting matching Zama dark brand
+- [02-01]: generateStaticParams from curriculum.ts for full SSG of all lesson/week pages
 
 ### Pending Todos
 
@@ -79,5 +84,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-platform-shell-and-core-components/02-CONTEXT.md
+Stopped at: Completed 02-01-PLAN.md
+Resume file: .planning/phases/02-platform-shell-and-core-components/02-01-SUMMARY.md

@@ -49,7 +49,7 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 02-01: TBD
+- [x] 02-01: Navigation shell with sidebar, lesson layout, and routing
 - [ ] 02-02: TBD
 
 ### Phase 3: Full Curriculum Content
@@ -111,7 +111,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and FHEVM Research | 2/2 | Complete | 2026-03-03 |
-| 2. Platform Shell and Core Components | 0/2 | Not started | - |
+| 2. Platform Shell and Core Components | 1/2 | In progress | - |
 | 3. Full Curriculum Content | 0/5 | Not started | - |
 | 4. Auth, Progress, and Backend | 0/2 | Not started | - |
 | 5. Dashboard, Landing Page, and Polish | 0/3 | Not started | - |
