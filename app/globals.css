@@ -155,3 +155,38 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Lesson content styles */
+.lesson-content {
+  /* Prose-like spacing for lesson content */
+  line-height: 1.75;
+}
+
+.lesson-content > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Code blocks within lessons can break out wider for readability */
+.lesson-content .code-breakout {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+/* Shiki theme integration -- match code-bg variable */
+.lesson-content pre {
+  background-color: var(--code-bg, #1A1A2E) !important;
+  border: 1px solid var(--code-border, #252540);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+}
+
+.lesson-content code {
+  font-family: var(--font-mono);
+}
+
+/* Highlighted line for CodeDiff (used in Plan 02) */
+.highlighted-line {
+  background-color: rgba(245, 197, 24, 0.08);
+}
