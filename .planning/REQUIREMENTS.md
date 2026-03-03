@@ -1,0 +1,163 @@
+# Requirements: FHE Academy
+
+**Defined:** 2026-03-03
+**Core Value:** Developers can follow a structured, hands-on FHEVM curriculum with side-by-side code comparisons, quizzes, and graded homework on a polished Zama-branded platform.
+
+## v1 Requirements
+
+### Curriculum
+
+- [ ] **CURR-01**: Platform delivers 20 lessons across 4 weeks covering FHEVM from basics to production patterns
+- [ ] **CURR-02**: Every lesson follows "Migration Mindset" — showing Solidity pattern transforming to FHEVM equivalent
+- [ ] **CURR-03**: Each lesson includes 2-3 inline multiple-choice quiz questions with correct answers and explanations
+- [ ] **CURR-04**: Each lesson includes collapsible instructor notes section with teaching guidance and common mistakes
+- [ ] **CURR-05**: All FHEVM code examples use current v0.9 API (`FHE.*` syntax, self-relaying decryption, `externalEuint` inputs)
+- [ ] **CURR-06**: Week 1 covers FHE fundamentals: why privacy matters, Zama ecosystem, dev setup, first contract migration, testing
+- [ ] **CURR-07**: Week 2 covers encrypted types deep dive, all FHE operations, encrypted inputs/ZKPoK, ACL system, patterns
+- [ ] **CURR-08**: Week 3 covers decryption mechanism, FHE.select patterns, on-chain randomness, frontend integration, auction/voting patterns
+- [ ] **CURR-09**: Week 4 covers gas optimization, security best practices, confidential DeFi concepts, testing strategies, testnet deployment
+- [ ] **CURR-10**: Syllabus page shows full 4-week curriculum overview
+
+### Homework & Assessment
+
+- [ ] **HW-01**: 4 weekly homework assignments with detailed specs, starter code references, and grading rubrics
+- [ ] **HW-02**: Week 1 homework: Temperature Converter migration to FHEVM
+- [ ] **HW-03**: Week 2 homework: Confidential ERC-20 token with encrypted balances
+- [ ] **HW-04**: Week 3 homework: Sealed-bid auction dApp (contract + frontend)
+- [ ] **HW-05**: Week 4 homework: Capstone project (student-chosen confidential dApp)
+- [ ] **HW-06**: AI Grader component — generates copy-paste prompt combining rubric + student code for any AI model
+- [ ] **HW-07**: Each rubric includes weighted criteria (compilation, types, ACL, tests) with Exceeds/Meets/Below thresholds
+
+### Platform & Navigation
+
+- [ ] **PLAT-01**: Sidebar navigation with week/lesson tree, active state highlighting, and completion indicators
+- [ ] **PLAT-02**: Landing page with hero section, curriculum overview, week structure, and Zama-branded CTA
+- [ ] **PLAT-03**: Dashboard showing overall progress, per-week progress cards, and "Continue Learning" button
+- [ ] **PLAT-04**: Week overview pages with learning objectives, lesson list, homework preview, and week progress bar
+- [ ] **PLAT-05**: Individual lesson pages using hardcoded TSX with full component access
+
+### Core Components
+
+- [ ] **COMP-01**: CodeDiff component — side-by-side Solidity vs FHEVM with Shiki syntax highlighting
+- [ ] **COMP-02**: CodeBlock component — single syntax-highlighted code block with copy button
+- [ ] **COMP-03**: Quiz component — multiple-choice questions with score tracking and feedback
+- [ ] **COMP-04**: CalloutBox component — tips, warnings, common mistakes with semantic styling
+- [ ] **COMP-05**: LessonComplete (Mark as Complete) button wired to progress tracking
+- [ ] **COMP-06**: InstructorNotes component — collapsible accordion section per lesson
+
+### Auth & Backend
+
+- [ ] **AUTH-01**: thirdweb ConnectButton for wallet-based identity (all content publicly accessible without wallet)
+- [ ] **AUTH-02**: Supabase backend storing progress keyed by wallet address
+- [ ] **AUTH-03**: API route (GET/POST /api/progress) for reading and upserting lesson completion
+- [ ] **AUTH-04**: ProgressProvider with React Context — optimistic updates, localStorage fallback
+- [ ] **AUTH-05**: Progress bars showing per-lesson, per-week, and overall completion
+
+### Design & Theme
+
+- [ ] **DSGN-01**: Zama-inspired dark theme — gold (#F5C518) primary, purple (#8B5CF6) secondary, dark backgrounds
+- [ ] **DSGN-02**: Shiki-powered VS Code-grade syntax highlighting with Solidity language support
+- [ ] **DSGN-03**: Responsive layout — desktop-first with tablet/mobile support
+- [ ] **DSGN-04**: Visual FHE concept diagrams — encryption lifecycle, ACL flow, decryption model
+
+### Code Repository
+
+- [ ] **REPO-01**: Hardhat monorepo with starter code (TODOs) and complete solutions per week
+- [ ] **REPO-02**: Each week's starter project compiles and has placeholder test structure
+- [ ] **REPO-03**: Each week's solution project compiles, passes tests, and demonstrates the homework requirements
+
+### Infrastructure
+
+- [ ] **INFRA-01**: Next.js 15 project with App Router, React 19, Tailwind v4, shadcn/ui
+- [ ] **INFRA-02**: Deployed to Vercel with environment variables configured
+- [ ] **INFRA-03**: All dependency versions pinned exactly in package.json
+
+## v2 Requirements
+
+### Notifications & Engagement
+
+- **NOTF-01**: Email notifications for cohort-based bootcamp sessions
+- **NOTF-02**: Certificate/NFT badge upon curriculum completion
+- **NOTF-03**: Leaderboard for homework scores
+
+### Enhanced Learning
+
+- **LEARN-01**: In-browser Solidity editor with FHEVM mock execution
+- **LEARN-02**: Video walkthroughs for each lesson
+- **LEARN-03**: Discussion forum or Discord integration per lesson
+
+### Advanced Platform
+
+- **ADV-01**: Light mode toggle
+- **ADV-02**: Internationalization (Turkish, Spanish, etc.)
+- **ADV-03**: CMS-based content management replacing hardcoded TSX
+
+## Out of Scope
+
+| Feature | Reason |
+|---------|--------|
+| In-browser code editor | Massive complexity — Hardhat monorepo achieves similar hands-on value |
+| Video content | Text + code faster to produce, easier for judges to skim |
+| Light mode | Dark-only aligned with Zama branding, halves design work |
+| Mobile app | Web-first, responsive design sufficient for competition |
+| Real FHE computation on platform | Educational platform, not a live FHE environment |
+| Discussion forums | Link to Zama Discord instead — zero maintenance |
+| Email/password auth | Wallet-native for Web3 audience, aligns with thirdweb |
+| Gamification/leaderboards | Retention mechanics not needed for 4-week competition bootcamp |
+
+## Traceability
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| CURR-01 | Phase 3 | Pending |
+| CURR-02 | Phase 3 | Pending |
+| CURR-03 | Phase 3 | Pending |
+| CURR-04 | Phase 3 | Pending |
+| CURR-05 | Phase 1 | Pending |
+| CURR-06 | Phase 3 | Pending |
+| CURR-07 | Phase 3 | Pending |
+| CURR-08 | Phase 3 | Pending |
+| CURR-09 | Phase 3 | Pending |
+| CURR-10 | Phase 3 | Pending |
+| HW-01 | Phase 3 | Pending |
+| HW-02 | Phase 3 | Pending |
+| HW-03 | Phase 3 | Pending |
+| HW-04 | Phase 3 | Pending |
+| HW-05 | Phase 3 | Pending |
+| HW-06 | Phase 5 | Pending |
+| HW-07 | Phase 3 | Pending |
+| PLAT-01 | Phase 2 | Pending |
+| PLAT-02 | Phase 5 | Pending |
+| PLAT-03 | Phase 5 | Pending |
+| PLAT-04 | Phase 3 | Pending |
+| PLAT-05 | Phase 2 | Pending |
+| COMP-01 | Phase 2 | Pending |
+| COMP-02 | Phase 2 | Pending |
+| COMP-03 | Phase 2 | Pending |
+| COMP-04 | Phase 2 | Pending |
+| COMP-05 | Phase 4 | Pending |
+| COMP-06 | Phase 2 | Pending |
+| AUTH-01 | Phase 4 | Pending |
+| AUTH-02 | Phase 4 | Pending |
+| AUTH-03 | Phase 4 | Pending |
+| AUTH-04 | Phase 4 | Pending |
+| AUTH-05 | Phase 4 | Pending |
+| DSGN-01 | Phase 2 | Pending |
+| DSGN-02 | Phase 2 | Pending |
+| DSGN-03 | Phase 5 | Pending |
+| DSGN-04 | Phase 5 | Pending |
+| REPO-01 | Phase 5 | Pending |
+| REPO-02 | Phase 5 | Pending |
+| REPO-03 | Phase 5 | Pending |
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Pending |
+
+**Coverage:**
+- v1 requirements: 42 total
+- Mapped to phases: 42
+- Unmapped: 0 ✓
+
+---
+*Requirements defined: 2026-03-03*
+*Last updated: 2026-03-03 after initial definition*
