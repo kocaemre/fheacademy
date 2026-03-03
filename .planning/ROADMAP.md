@@ -12,7 +12,7 @@ FHE Academy ships as a 5-phase build: foundation and FHEVM research first (ensur
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation and FHEVM Research** - Project skeleton, verified FHEVM v0.9 reference, curriculum outline
+- [x] **Phase 1: Foundation and FHEVM Research** - Project skeleton, verified FHEVM v0.9 reference, curriculum outline
 - [ ] **Phase 2: Platform Shell and Core Components** - Layouts, navigation, CodeDiff, Quiz, InstructorNotes, Zama dark theme
 - [ ] **Phase 3: Full Curriculum Content** - All 20 lessons, 4 homework assignments, quizzes, instructor notes, syllabus
 - [ ] **Phase 4: Auth, Progress, and Backend** - Wallet auth, Supabase progress sync, MarkAsComplete, progress bars
@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: TBD
 
 Plans:
-- [ ] 01-01: TBD
+- [x] 01-01: Next.js 15 scaffold with Tailwind v4 and Vercel deployment
 - [x] 01-02: FHEVM reference docs and curriculum outline
 
 ### Phase 2: Platform Shell and Core Components
@@ -110,7 +110,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation and FHEVM Research | 1/2 | In Progress | - |
+| 1. Foundation and FHEVM Research | 2/2 | Complete | 2026-03-03 |
 | 2. Platform Shell and Core Components | 0/2 | Not started | - |
 | 3. Full Curriculum Content | 0/5 | Not started | - |
 | 4. Auth, Progress, and Backend | 0/2 | Not started | - |

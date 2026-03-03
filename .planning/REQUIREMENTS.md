@@ -68,9 +68,9 @@
 
 ### Infrastructure
 
-- [ ] **INFRA-01**: Next.js 15 project with App Router, React 19, Tailwind v4, shadcn/ui
-- [ ] **INFRA-02**: Deployed to Vercel with environment variables configured
-- [ ] **INFRA-03**: All dependency versions pinned exactly in package.json
+- [x] **INFRA-01**: Next.js 15 project with App Router, React 19, Tailwind v4, shadcn/ui
+- [x] **INFRA-02**: Deployed to Vercel with environment variables configured
+- [x] **INFRA-03**: All dependency versions pinned exactly in package.json
 
 ## v2 Requirements
 
@@ -149,9 +149,9 @@
 | REPO-01 | Phase 5 | Pending |
 | REPO-02 | Phase 5 | Pending |
 | REPO-03 | Phase 5 | Pending |
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
+| INFRA-02 | Phase 1 | Complete |
+| INFRA-03 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 42 total
