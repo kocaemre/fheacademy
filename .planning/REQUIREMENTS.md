@@ -38,12 +38,12 @@
 
 ### Core Components
 
-- [ ] **COMP-01**: CodeDiff component — side-by-side Solidity vs FHEVM with Shiki syntax highlighting
-- [ ] **COMP-02**: CodeBlock component — single syntax-highlighted code block with copy button
-- [ ] **COMP-03**: Quiz component — multiple-choice questions with score tracking and feedback
-- [ ] **COMP-04**: CalloutBox component — tips, warnings, common mistakes with semantic styling
+- [x] **COMP-01**: CodeDiff component — side-by-side Solidity vs FHEVM with Shiki syntax highlighting
+- [x] **COMP-02**: CodeBlock component — single syntax-highlighted code block with copy button
+- [x] **COMP-03**: Quiz component — multiple-choice questions with score tracking and feedback
+- [x] **COMP-04**: CalloutBox component — tips, warnings, common mistakes with semantic styling
 - [ ] **COMP-05**: LessonComplete (Mark as Complete) button wired to progress tracking
-- [ ] **COMP-06**: InstructorNotes component — collapsible accordion section per lesson
+- [x] **COMP-06**: InstructorNotes component — collapsible accordion section per lesson
 
 ### Auth & Backend
 
@@ -56,7 +56,7 @@
 ### Design & Theme
 
 - [x] **DSGN-01**: Zama-inspired dark theme — gold (#F5C518) primary, purple (#8B5CF6) secondary, dark backgrounds
-- [ ] **DSGN-02**: Shiki-powered VS Code-grade syntax highlighting with Solidity language support
+- [x] **DSGN-02**: Shiki-powered VS Code-grade syntax highlighting with Solidity language support
 - [ ] **DSGN-03**: Responsive layout — desktop-first with tablet/mobile support
 - [ ] **DSGN-04**: Visual FHE concept diagrams — encryption lifecycle, ACL flow, decryption model
 
@@ -131,19 +131,19 @@
 | PLAT-03 | Phase 5 | Pending |
 | PLAT-04 | Phase 3 | Pending |
 | PLAT-05 | Phase 2 | Complete |
-| COMP-01 | Phase 2 | Pending |
-| COMP-02 | Phase 2 | Pending |
-| COMP-03 | Phase 2 | Pending |
-| COMP-04 | Phase 2 | Pending |
+| COMP-01 | Phase 2 | Complete |
+| COMP-02 | Phase 2 | Complete |
+| COMP-03 | Phase 2 | Complete |
+| COMP-04 | Phase 2 | Complete |
 | COMP-05 | Phase 4 | Pending |
-| COMP-06 | Phase 2 | Pending |
+| COMP-06 | Phase 2 | Complete |
 | AUTH-01 | Phase 4 | Pending |
 | AUTH-02 | Phase 4 | Pending |
 | AUTH-03 | Phase 4 | Pending |
 | AUTH-04 | Phase 4 | Pending |
 | AUTH-05 | Phase 4 | Pending |
 | DSGN-01 | Phase 2 | Complete |
-| DSGN-02 | Phase 2 | Pending |
+| DSGN-02 | Phase 2 | Complete |
 | DSGN-03 | Phase 5 | Pending |
 | DSGN-04 | Phase 5 | Pending |
 | REPO-01 | Phase 5 | Pending |

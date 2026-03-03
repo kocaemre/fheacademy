@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v0.9
 milestone_name: milestone
 status: in-progress
-last_updated: "2026-03-03T15:28:01Z"
+last_updated: "2026-03-03T15:35:00Z"
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 14
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -18,33 +18,33 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-03)
 
 **Core value:** Developers can follow a structured, hands-on FHEVM curriculum with side-by-side code comparisons, quizzes, and graded homework on a polished Zama-branded platform.
-**Current focus:** Phase 2: Platform Shell and Core Components
+**Current focus:** Phase 3: Curriculum Content
 
 ## Current Position
 
-Phase: 2 of 5 (Platform Shell and Core Components)
-Plan: 1 of 2 in current phase
-Status: Executing Phase 2 -- Plan 01 complete, Plan 02 next
-Last activity: 2026-03-03 -- Completed 02-01-PLAN.md (Navigation shell + sidebar + routing)
+Phase: 3 of 5 (Curriculum Content)
+Plan: 1 of ? in current phase
+Status: Phase 2 complete -- ready for Phase 3
+Last activity: 2026-03-03 -- Completed 02-02-PLAN.md (Content components: CodeDiff, Quiz, CalloutBox, InstructorNotes, CodeBlock)
 
-Progress: [██░░░░░░░░] 21%
+Progress: [███░░░░░░░] 29%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 8min
-- Total execution time: 0.42 hours
+- Total plans completed: 4
+- Average duration: 7min
+- Total execution time: 0.47 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Foundation | 2 | 21min | 10min |
-| 2. Shell & Components | 1 | 4min | 4min |
+| 2. Shell & Components | 2 | 7min | 3.5min |
 
 **Recent Trend:**
-- Last 5 plans: 9min, 12min, 4min
+- Last 5 plans: 9min, 12min, 4min, 3min
 - Trend: Accelerating
 
 *Updated after each plan completion*
@@ -70,6 +70,11 @@ Recent decisions affecting current work:
 - [02-01]: Route group (academy) isolates sidebar layout from standalone root page
 - [02-01]: Shiki vitesse-dark theme for code highlighting matching Zama dark brand
 - [02-01]: generateStaticParams from curriculum.ts for full SSG of all lesson/week pages
+- [02-02]: CodeBlock uses codeToHtml, CodeDiff uses codeToHast + hast-util-to-jsx-runtime for line highlighting
+- [02-02]: Quiz single-attempt model with no retry; incorrect shows correct answer + explanation
+- [02-02]: CalloutBox uses CVA for type-safe variant styling (tip/warning/mistake/info)
+- [02-02]: Shiki pre backgrounds overridden to transparent via .shiki-wrapper CSS class
+- [02-02]: QuizProvider/QuizScore track lesson-scoped quiz scores via React context
 
 ### Pending Todos
 
@@ -84,5 +89,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 02-01-PLAN.md
-Resume file: .planning/phases/02-platform-shell-and-core-components/02-01-SUMMARY.md
+Stopped at: Completed 02-02-PLAN.md (Phase 2 complete)
+Resume file: .planning/phases/02-platform-shell-and-core-components/02-02-SUMMARY.md
