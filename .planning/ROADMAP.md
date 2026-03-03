@@ -34,7 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [x] 01-02: FHEVM reference docs and curriculum outline
 
 ### Phase 2: Platform Shell and Core Components
 **Goal**: Developers can navigate the full week/lesson structure and all reusable content components (CodeDiff, Quiz, CodeBlock, CalloutBox, InstructorNotes) are built and ready for content authoring
@@ -110,7 +110,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation and FHEVM Research | 0/2 | Not started | - |
+| 1. Foundation and FHEVM Research | 1/2 | In Progress | - |
 | 2. Platform Shell and Core Components | 0/2 | Not started | - |
 | 3. Full Curriculum Content | 0/5 | Not started | - |
 | 4. Auth, Progress, and Backend | 0/2 | Not started | - |

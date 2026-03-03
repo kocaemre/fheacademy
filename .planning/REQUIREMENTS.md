@@ -11,7 +11,7 @@
 - [ ] **CURR-02**: Every lesson follows "Migration Mindset" — showing Solidity pattern transforming to FHEVM equivalent
 - [ ] **CURR-03**: Each lesson includes 2-3 inline multiple-choice quiz questions with correct answers and explanations
 - [ ] **CURR-04**: Each lesson includes collapsible instructor notes section with teaching guidance and common mistakes
-- [ ] **CURR-05**: All FHEVM code examples use current v0.9 API (`FHE.*` syntax, self-relaying decryption, `externalEuint` inputs)
+- [x] **CURR-05**: All FHEVM code examples use current v0.9 API (`FHE.*` syntax, self-relaying decryption, `externalEuint` inputs)
 - [ ] **CURR-06**: Week 1 covers FHE fundamentals: why privacy matters, Zama ecosystem, dev setup, first contract migration, testing
 - [ ] **CURR-07**: Week 2 covers encrypted types deep dive, all FHE operations, encrypted inputs/ZKPoK, ACL system, patterns
 - [ ] **CURR-08**: Week 3 covers decryption mechanism, FHE.select patterns, on-chain randomness, frontend integration, auction/voting patterns
@@ -113,7 +113,7 @@
 | CURR-02 | Phase 3 | Pending |
 | CURR-03 | Phase 3 | Pending |
 | CURR-04 | Phase 3 | Pending |
-| CURR-05 | Phase 1 | Pending |
+| CURR-05 | Phase 1 | Complete |
 | CURR-06 | Phase 3 | Pending |
 | CURR-07 | Phase 3 | Pending |
 | CURR-08 | Phase 3 | Pending |
