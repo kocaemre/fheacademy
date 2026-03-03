@@ -186,7 +186,20 @@
   font-family: var(--font-mono);
 }
 
-/* Highlighted line for CodeDiff (used in Plan 02) */
+/* Shiki theme override -- let CSS variables control background */
+.shiki-wrapper pre {
+  background-color: transparent !important;
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+}
+
+.shiki-wrapper code {
+  font-family: var(--font-mono);
+}
+
+/* Highlighted line for CodeDiff */
 .highlighted-line {
   background-color: rgba(245, 197, 24, 0.08);
 }
