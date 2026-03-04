@@ -50,7 +50,7 @@ Plans:
 
 Plans:
 - [x] 02-01: Navigation shell with sidebar, lesson layout, and routing
-- [ ] 02-02: TBD
+- [x] 02-02: Content components (CodeDiff, Quiz, CalloutBox, InstructorNotes, CodeBlock)
 
 ### Phase 3: Full Curriculum Content
 **Goal**: The complete 4-week FHEVM curriculum is authored -- 20 lessons with Migration Mindset code comparisons, inline quizzes, instructor notes, 4 homework assignments with rubrics, week overviews, and syllabus
@@ -62,14 +62,15 @@ Plans:
   3. Each lesson includes a collapsible instructor notes section with teaching guidance and common mistakes
   4. Week overview pages display learning objectives, a list of lessons for that week, and a homework preview
   5. The syllabus page shows the full 4-week curriculum overview with all weeks and lessons listed
-**Plans**: TBD
+**Plans**: 6 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
-- [ ] 03-03: TBD
-- [ ] 03-04: TBD
-- [ ] 03-05: TBD
+- [ ] 03-01: Infrastructure — data model extension, lesson content architecture, homework route, syllabus skeleton, week overview enrichment
+- [ ] 03-02: Week 1 content — lessons 1.1-1.5, Temperature Converter homework
+- [ ] 03-03: Week 2 content — lessons 2.1-2.5, Confidential ERC-20 homework
+- [ ] 03-04: Week 3 content — lessons 3.1-3.5, Sealed-Bid Auction homework
+- [ ] 03-05: Week 4 content — lessons 4.1-4.5, Capstone Project homework
+- [ ] 03-06: Syllabus finalization, FHEVM accuracy verification, human sign-off
 
 ### Phase 4: Auth, Progress, and Backend
 **Goal**: Users can connect their wallet and their lesson completion progress persists across devices via Supabase, with visual progress indicators throughout the platform
@@ -111,7 +112,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and FHEVM Research | 2/2 | Complete | 2026-03-03 |
-| 2. Platform Shell and Core Components | 1/2 | In progress | - |
-| 3. Full Curriculum Content | 0/5 | Not started | - |
+| 2. Platform Shell and Core Components | 2/2 | Complete | 2026-03-03 |
+| 3. Full Curriculum Content | 0/6 | Not started | - |
 | 4. Auth, Progress, and Backend | 0/2 | Not started | - |
 | 5. Dashboard, Landing Page, and Polish | 0/3 | Not started | - |
