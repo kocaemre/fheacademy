@@ -8,12 +8,16 @@ export interface Lesson {
 export interface Homework {
   slug: string
   title: string
+  description: string
+  deliverables: string[]
+  difficulty: "beginner" | "intermediate" | "advanced"
 }
 
 export interface Week {
   id: number
   title: string
   goal: string
+  learningObjectives: string[]
   lessons: Lesson[]
   homework: Homework
 }
@@ -23,6 +27,13 @@ export const curriculum: Week[] = [
     id: 1,
     title: "From Solidity to Confidential Solidity",
     goal: "Bridge from familiar Solidity to FHEVM. Set up the development environment and write the first encrypted contract.",
+    learningObjectives: [
+      "Understand why public blockchains have a privacy problem and how FHE solves it",
+      "Map out Zama's technology stack and FHEVM architecture",
+      "Set up a Hardhat project with FHEVM plugin and mock mode",
+      "Migrate a standard Solidity contract to use FHEVM encrypted types and operations",
+      "Write tests for FHEVM contracts using fhevm test helpers",
+    ],
     lessons: [
       {
         id: "1.1",
@@ -58,12 +69,28 @@ export const curriculum: Week[] = [
     homework: {
       slug: "temperature-converter-migration",
       title: "Temperature Converter Migration",
+      description:
+        "Migrate a classical TemperatureConverter contract to FHEVM, replacing plaintext types with encrypted equivalents and implementing proper ACL permissions.",
+      deliverables: [
+        "Replace uint32 with euint32 for all state variables",
+        "Accept encrypted input via externalEuint32 + inputProof",
+        "Implement FHE arithmetic for temperature conversion",
+        "Set proper ACL permissions with FHE.allowThis and FHE.allow",
+      ],
+      difficulty: "beginner",
     },
   },
   {
     id: 2,
     title: "Mastering Encrypted Types and Access Control",
     goal: "Deep dive into FHEVM's type system, all operations, and the ACL mechanism. Build a real confidential token.",
+    learningObjectives: [
+      "Know all FHEVM encrypted types and select the right type for each use case",
+      "Use all arithmetic, comparison, and bitwise FHE operations",
+      "Implement functions that accept encrypted inputs with ZKPoK validation",
+      "Master the ACL system for multi-party permission flows",
+      "Apply defensive programming patterns including overflow protection with FHE.select",
+    ],
     lessons: [
       {
         id: "2.1",
@@ -99,12 +126,28 @@ export const curriculum: Week[] = [
     homework: {
       slug: "confidential-erc20-token",
       title: "Confidential ERC-20 Token",
+      description:
+        "Build a full confidential ERC-20 token with encrypted balances, transfers with overflow protection, and a complete allowance system.",
+      deliverables: [
+        "Encrypted balance mapping using euint64",
+        "Transfer function with FHE.select overflow protection",
+        "Approve and transferFrom with encrypted allowances",
+        "Comprehensive test suite covering mint, transfer, and edge cases",
+      ],
+      difficulty: "intermediate",
     },
   },
   {
     id: 3,
     title: "Building Real-World Confidential dApps",
     goal: "Move from contracts to full dApps. Decryption, frontend integration, and real design patterns.",
+    learningObjectives: [
+      "Understand the self-relaying decryption mechanism in FHEVM v0.9",
+      "Implement complex business logic using FHE.select for encrypted branching",
+      "Generate and use encrypted random numbers on-chain",
+      "Build a React frontend that interacts with FHEVM contracts",
+      "Design and implement sealed-bid auction and private voting patterns",
+    ],
     lessons: [
       {
         id: "3.1",
@@ -140,12 +183,28 @@ export const curriculum: Week[] = [
     homework: {
       slug: "sealed-bid-auction-dapp",
       title: "Sealed-Bid Auction dApp",
+      description:
+        "Build a complete sealed-bid auction dApp with an FHEVM smart contract and React frontend where bids remain encrypted until the auction ends.",
+      deliverables: [
+        "Smart contract with placeBid, endAuction, and revealWinner functions",
+        "Encrypted bid comparison using FHE.gt and FHE.select",
+        "React frontend for bid submission and winner reveal",
+        "At least 3 test scenarios covering the full auction lifecycle",
+      ],
+      difficulty: "advanced",
     },
   },
   {
     id: 4,
     title: "Advanced Patterns and Capstone Project",
     goal: "Production readiness. Gas optimization, security hardening, and a capstone project.",
+    learningObjectives: [
+      "Understand FHE operation costs and apply gas optimization strategies",
+      "Conduct security reviews of FHEVM contracts using an audit checklist",
+      "Design confidential DeFi protocols using FHEVM primitives",
+      "Write comprehensive test suites for FHEVM contracts",
+      "Deploy FHEVM contracts to Ethereum Sepolia testnet",
+    ],
     lessons: [
       {
         id: "4.1",
@@ -181,6 +240,15 @@ export const curriculum: Week[] = [
     homework: {
       slug: "capstone-confidential-dapp",
       title: "Capstone: Student-Chosen Confidential dApp",
+      description:
+        "Design, build, and deploy your own confidential dApp using FHEVM. Choose from categories: voting, token swap, encrypted credentials, or privacy-preserving game.",
+      deliverables: [
+        "Smart contract deployed to testnet or working in mock mode",
+        "Test suite with minimum 5 test cases",
+        "Simple React frontend",
+        "README with architecture and FHEVM features used",
+      ],
+      difficulty: "advanced",
     },
   },
 ]
@@ -206,6 +274,16 @@ export function getAllLessons(): Array<{ weekId: number; lesson: Lesson }> {
     }
   }
   return result
+}
+
+export function getAllHomeworks(): Array<{
+  weekId: number
+  homework: Homework
+}> {
+  return curriculum.map((week) => ({
+    weekId: week.id,
+    homework: week.homework,
+  }))
 }
 
 export function getAdjacentLessons(
