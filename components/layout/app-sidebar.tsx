@@ -2,7 +2,13 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { ChevronDown, BookOpen, FileCode, Circle } from "lucide-react"
+import {
+  ChevronDown,
+  BookOpen,
+  FileCode,
+  FileText,
+  Circle,
+} from "lucide-react"
 import { curriculum } from "@/lib/curriculum"
 import {
   Sidebar,
@@ -23,6 +29,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
+import { cn } from "@/lib/utils"
 
 export function AppSidebar() {
   const pathname = usePathname()
@@ -34,6 +41,17 @@ export function AppSidebar() {
           <span className="text-lg font-bold text-sidebar-primary">
             FHE Academy
           </span>
+        </Link>
+        <Link
+          href="/syllabus"
+          className={cn(
+            "mt-1 flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors",
+            pathname === "/syllabus" &&
+              "text-sidebar-primary bg-sidebar-primary/10"
+          )}
+        >
+          <FileText className="size-3.5" />
+          Syllabus
         </Link>
       </SidebarHeader>
 
