@@ -1,76 +1,22 @@
 # Roadmap: FHE Academy
 
-## Overview
+## Milestones
 
-FHE Academy ships as a 5-phase build: foundation and FHEVM research first (ensuring API accuracy), then platform shell and reusable components (enabling content authoring), then the full 20-lesson curriculum (the core product judges evaluate), then auth and progress tracking (progressive enhancement), and finally dashboard, landing page, and polish (submission readiness). Content is the primary judging criterion and receives the longest phase. Auth is deliberately late because the platform works without it.
+- ✅ **v0.9 Curriculum MVP** — Phases 1-3 (shipped 2026-03-04)
+- 🚧 **v1.0 Submission** — Phases 4-5 (planned)
 
 ## Phases
 
-**Phase Numbering:**
-- Integer phases (1, 2, 3): Planned milestone work
-- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
+<details>
+<summary>✅ v0.9 Curriculum MVP (Phases 1-3) — SHIPPED 2026-03-04</summary>
 
-Decimal phases appear between their surrounding integers in numeric order.
+- [x] Phase 1: Foundation and FHEVM Research (2/2 plans) — completed 2026-03-03
+- [x] Phase 2: Platform Shell and Core Components (2/2 plans) — completed 2026-03-03
+- [x] Phase 3: Full Curriculum Content (6/6 plans) — completed 2026-03-04
 
-- [x] **Phase 1: Foundation and FHEVM Research** - Project skeleton, verified FHEVM v0.9 reference, curriculum outline
-- [ ] **Phase 2: Platform Shell and Core Components** - Layouts, navigation, CodeDiff, Quiz, InstructorNotes, Zama dark theme
-- [x] **Phase 3: Full Curriculum Content** - All 20 lessons, 4 homework assignments, quizzes, instructor notes, syllabus
-- [ ] **Phase 4: Auth, Progress, and Backend** - Wallet auth, Supabase progress sync, MarkAsComplete, progress bars
-- [ ] **Phase 5: Dashboard, Landing Page, and Polish** - Dashboard, landing page, AI Grader, Hardhat monorepo, responsive polish, deployment
+</details>
 
-## Phase Details
-
-### Phase 1: Foundation and FHEVM Research
-**Goal**: Developer has a verified FHEVM v0.9 reference and a working Next.js 15 project deployed to Vercel, with the full curriculum outline defined
-**Depends on**: Nothing (first phase)
-**Requirements**: CURR-05, INFRA-01, INFRA-02, INFRA-03
-**Success Criteria** (what must be TRUE):
-  1. Next.js 15 project with App Router, Tailwind v4, and shadcn/ui runs locally and is deployed to Vercel (even as a placeholder page)
-  2. A verified FHEVM v0.9 API reference exists covering FHE.* functions, encrypted types, ACL patterns, and self-relaying decryption -- no references to deprecated TFHE.* or Oracle decryption
-  3. A "Solidity-to-FHEVM Transformation" reference sheet maps every common Solidity pattern to its FHEVM equivalent
-  4. A complete curriculum outline exists with 4 weeks, ~20 lesson titles, key code concepts per lesson, and learning objectives
-  5. All dependency versions are pinned exactly in package.json
-**Plans**: TBD
-
-Plans:
-- [x] 01-01: Next.js 15 scaffold with Tailwind v4 and Vercel deployment
-- [x] 01-02: FHEVM reference docs and curriculum outline
-
-### Phase 2: Platform Shell and Core Components
-**Goal**: Developers can navigate the full week/lesson structure and all reusable content components (CodeDiff, Quiz, CodeBlock, CalloutBox, InstructorNotes) are built and ready for content authoring
-**Depends on**: Phase 1
-**Requirements**: PLAT-01, PLAT-05, COMP-01, COMP-02, COMP-03, COMP-04, COMP-06, DSGN-01, DSGN-02
-**Success Criteria** (what must be TRUE):
-  1. Sidebar shows all 4 weeks with their lessons, highlights the active lesson, and navigates between lessons
-  2. CodeDiff component renders side-by-side Solidity vs FHEVM code with Shiki syntax highlighting and labeled panels
-  3. Quiz component presents multiple-choice questions, shows correct/incorrect feedback with explanations, and tracks score
-  4. Lesson pages render hardcoded TSX content using CodeDiff, CodeBlock, CalloutBox, and InstructorNotes components in a Zama-branded dark theme with gold and purple accents
-  5. InstructorNotes renders as a collapsible accordion section within lesson pages
-**Plans**: TBD
-
-Plans:
-- [x] 02-01: Navigation shell with sidebar, lesson layout, and routing
-- [x] 02-02: Content components (CodeDiff, Quiz, CalloutBox, InstructorNotes, CodeBlock)
-
-### Phase 3: Full Curriculum Content
-**Goal**: The complete 4-week FHEVM curriculum is authored -- 20 lessons with Migration Mindset code comparisons, inline quizzes, instructor notes, 4 homework assignments with rubrics, week overviews, and syllabus
-**Depends on**: Phase 2
-**Requirements**: CURR-01, CURR-02, CURR-03, CURR-04, CURR-06, CURR-07, CURR-08, CURR-09, CURR-10, HW-01, HW-02, HW-03, HW-04, HW-05, HW-07, PLAT-04
-**Success Criteria** (what must be TRUE):
-  1. All 20 lessons are accessible and each one shows a Solidity pattern transforming to its FHEVM equivalent via the CodeDiff component (Migration Mindset)
-  2. Each lesson contains 2-3 inline quiz questions with correct answers and explanations that test conceptual understanding (not memorization)
-  3. Each lesson includes a collapsible instructor notes section with teaching guidance and common mistakes
-  4. Week overview pages display learning objectives, a list of lessons for that week, and a homework preview
-  5. The syllabus page shows the full 4-week curriculum overview with all weeks and lessons listed
-**Plans**: 6 plans
-
-Plans:
-- [x] 03-01: Infrastructure — data model extension, lesson content architecture, homework route, syllabus skeleton, week overview enrichment
-- [x] 03-02: Week 1 content — lessons 1.1-1.5, Temperature Converter homework
-- [x] 03-03: Week 2 content — lessons 2.1-2.5, Confidential ERC-20 homework
-- [x] 03-04: Week 3 content — lessons 3.1-3.5, Sealed-Bid Auction homework
-- [x] 03-05: Week 4 content — lessons 4.1-4.5, Capstone Project homework
-- [x] 03-06: Syllabus finalization, FHEVM accuracy verification, human sign-off
+### 🚧 v1.0 Submission (In Progress / Planned)
 
 ### Phase 4: Auth, Progress, and Backend
 **Goal**: Users can connect their wallet and their lesson completion progress persists across devices via Supabase, with visual progress indicators throughout the platform
@@ -106,13 +52,10 @@ Plans:
 
 ## Progress
 
-**Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
-
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Foundation and FHEVM Research | 2/2 | Complete | 2026-03-03 |
-| 2. Platform Shell and Core Components | 2/2 | Complete | 2026-03-03 |
-| 3. Full Curriculum Content | 6/6 | Complete | 2026-03-04 |
-| 4. Auth, Progress, and Backend | 0/2 | Not started | - |
-| 5. Dashboard, Landing Page, and Polish | 0/3 | Not started | - |
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Foundation and FHEVM Research | v0.9 | 2/2 | Complete | 2026-03-03 |
+| 2. Platform Shell and Core Components | v0.9 | 2/2 | Complete | 2026-03-03 |
+| 3. Full Curriculum Content | v0.9 | 6/6 | Complete | 2026-03-04 |
+| 4. Auth, Progress, and Backend | v1.0 | 0/2 | Not started | - |
+| 5. Dashboard, Landing Page, and Polish | v1.0 | 0/3 | Not started | - |
