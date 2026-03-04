@@ -3,14 +3,17 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowLeft, CheckCircle2, BookOpen } from "lucide-react"
 import { getWeek, curriculum } from "@/lib/curriculum"
+import { Homework1Content } from "@/content/homework/homework-1"
 
 interface HomeworkPageProps {
   params: Promise<{ weekId: string; homeworkSlug: string }>
 }
 
 // Content registry: maps "weekId-homeworkSlug" to content component
-// Plans 02-05 will add imports here
-const homeworkContent: Record<string, React.ComponentType> = {}
+const homeworkContent: Record<string, React.ComponentType> = {
+  "1-temperature-converter-migration": Homework1Content,
+  // Future homework content will be added here by Plans 03-06
+}
 
 const difficultyStyles: Record<
   string,
