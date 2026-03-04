@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v0.9
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-03T15:44:03.192Z"
+last_updated: "2026-03-04T10:21:32.886Z"
 progress:
-  total_phases: 2
+  total_phases: 3
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 10
+  completed_plans: 5
 ---
 
 # Project State
@@ -23,18 +23,18 @@ See: .planning/PROJECT.md (updated 2026-03-03)
 ## Current Position
 
 Phase: 3 of 5 (Curriculum Content)
-Plan: 1 of ? in current phase
-Status: Phase 2 complete -- ready for Phase 3
-Last activity: 2026-03-03 -- Completed 02-02-PLAN.md (Content components: CodeDiff, Quiz, CalloutBox, InstructorNotes, CodeBlock)
+Plan: 2 of 6 in current phase
+Status: Executing Phase 3 -- Plan 01 complete
+Last activity: 2026-03-04 -- Completed 03-01-PLAN.md (Content architecture: registry pattern, homework/syllabus routes, enriched data model)
 
-Progress: [███░░░░░░░] 29%
+Progress: [████░░░░░░] 36%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: 7min
-- Total execution time: 0.47 hours
+- Total execution time: 0.55 hours
 
 **By Phase:**
 
@@ -42,12 +42,14 @@ Progress: [███░░░░░░░] 29%
 |-------|-------|-------|----------|
 | 1. Foundation | 2 | 21min | 10min |
 | 2. Shell & Components | 2 | 7min | 3.5min |
+| 3. Curriculum Content | 1 | 5min | 5min |
 
 **Recent Trend:**
-- Last 5 plans: 9min, 12min, 4min, 3min
-- Trend: Accelerating
+- Last 5 plans: 9min, 12min, 4min, 3min, 5min
+- Trend: Stable-fast
 
 *Updated after each plan completion*
+| Phase 03 P01 | 5min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -75,6 +77,9 @@ Recent decisions affecting current work:
 - [02-02]: CalloutBox uses CVA for type-safe variant styling (tip/warning/mistake/info)
 - [02-02]: Shiki pre backgrounds overridden to transparent via .shiki-wrapper CSS class
 - [02-02]: QuizProvider/QuizScore track lesson-scoped quiz scores via React context
+- [03-01]: Content registry pattern maps weekNum-lessonSlug keys to imported content components for extensible lesson dispatching
+- [03-01]: Homework skeleton renders from enriched curriculum.ts data when content not yet authored
+- [03-01]: Syllabus placed in (academy) layout group to share sidebar navigation
 
 ### Pending Todos
 
@@ -88,6 +93,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-03
-Stopped at: Completed 02-02-PLAN.md (Phase 2 complete)
-Resume file: .planning/phases/02-platform-shell-and-core-components/02-02-SUMMARY.md
+Last session: 2026-03-04
+Stopped at: Completed 03-01-PLAN.md (Content architecture)
+Resume file: .planning/phases/03-full-curriculum-content/03-01-SUMMARY.md
