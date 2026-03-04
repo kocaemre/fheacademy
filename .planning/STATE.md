@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: Submission
 status: executing
-last_updated: "2026-03-04T12:51:00.000Z"
+last_updated: "2026-03-04T15:20:00.000Z"
 progress:
   total_phases: 2
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 5
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-04)
 
 **Core value:** Developers can follow a structured, hands-on FHEVM curriculum with side-by-side code comparisons, quizzes, and graded homework on a polished Zama-branded platform.
-**Current focus:** Executing v1.0 Submission — Phase 4 auth + progress infrastructure
+**Current focus:** Executing v1.0 Submission — Phase 4 complete, Phase 5 next
 
 ## Current Position
 
-Phase: 4 of 5 — Auth, Progress, and Backend
-Plan: 1 of 2 complete — Auth Infrastructure done, Progress UI next
-Status: Plan 04-01 complete. ThirdwebProvider + ProgressProvider + API route built and verified.
-Last activity: 2026-03-04 — Completed 04-01 Auth Infrastructure plan
+Phase: 4 of 5 — Auth, Progress, and Backend (COMPLETE)
+Plan: 2 of 2 complete — Phase 4 done, ready for Phase 5
+Status: Phase 4 complete. Auth infrastructure + progress UI fully wired across all pages.
+Last activity: 2026-03-04 — Completed 04-02 Progress UI Integration plan
 
-Progress: [██████░░░░] 60% (3/5 phases) | Phase 4: [█████░░░░░] 50% (1/2 plans)
+Progress: [████████░░] 80% (4/5 phases) | Phase 4: [██████████] 100% (2/2 plans)
 
 ## Performance Metrics
 
@@ -41,6 +41,7 @@ Progress: [██████░░░░] 60% (3/5 phases) | Phase 4: [██�
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
 | 04 | 01 - Auth Infrastructure | 38min | 2 | 10 |
+| 04 | 02 - Progress UI Integration | 12min | 3 | 12 |
 
 ## Accumulated Context
 
@@ -53,6 +54,9 @@ Key decisions for next milestone:
 - Item ID format: "lesson-{weekId}-{slug}" and "homework-{weekId}-{slug}"
 - localStorage is resilient fallback; Supabase errors never block UI
 - AI Grader as copy-paste prompt generator (pending Phase 5)
+- Client component island pattern for server pages needing progress data (Phase 4 Plan 02)
+- No toast notifications for MarkComplete — visual state change is the feedback (Phase 4 Plan 02)
+- Sidebar footer dual mode: wallet address + progress when connected, ConnectButton when not (Phase 4 Plan 02)
 
 ### Pending Todos
 
@@ -67,5 +71,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Completed 04-01-PLAN.md (Auth Infrastructure)
-Resume file: .planning/phases/04-auth-progress-and-backend/04-02-PLAN.md
+Stopped at: Completed 04-02-PLAN.md (Progress UI Integration) — Phase 4 fully done
+Resume file: Phase 5 planning needed next

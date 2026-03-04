@@ -31,7 +31,7 @@
 
 Plans:
 - [x] 04-01: Auth Infrastructure — thirdweb + Supabase setup, ProgressProvider context, API route (Wave 1)
-- [ ] 04-02: Progress UI Integration — ConnectButton, MarkComplete, progress bars, sidebar indicators (Wave 2)
+- [x] 04-02: Progress UI Integration — ConnectButton, MarkComplete, progress bars, sidebar indicators (Wave 2)
 
 ### Phase 5: Dashboard, Landing Page, and Polish
 **Goal**: The platform has a polished landing page, a functional dashboard, the AI Grader differentiator, the Hardhat monorepo, and is submission-ready with responsive design verified
@@ -57,5 +57,5 @@ Plans:
 | 1. Foundation and FHEVM Research | v0.9 | 2/2 | Complete | 2026-03-03 |
 | 2. Platform Shell and Core Components | v0.9 | 2/2 | Complete | 2026-03-03 |
 | 3. Full Curriculum Content | v0.9 | 6/6 | Complete | 2026-03-04 |
-| 4. Auth, Progress, and Backend | v1.0 | 1/2 | In progress | - |
+| 4. Auth, Progress, and Backend | v1.0 | 2/2 | Complete | 2026-03-04 |
 | 5. Dashboard, Landing Page, and Polish | v1.0 | 0/3 | Not started | - |
