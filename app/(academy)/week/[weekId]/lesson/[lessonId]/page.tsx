@@ -67,6 +67,26 @@ import {
   Lesson3_5Content,
   lesson3_5Meta,
 } from "@/content/lessons/lesson-3-5"
+import {
+  Lesson4_1Content,
+  lesson4_1Meta,
+} from "@/content/lessons/lesson-4-1"
+import {
+  Lesson4_2Content,
+  lesson4_2Meta,
+} from "@/content/lessons/lesson-4-2"
+import {
+  Lesson4_3Content,
+  lesson4_3Meta,
+} from "@/content/lessons/lesson-4-3"
+import {
+  Lesson4_4Content,
+  lesson4_4Meta,
+} from "@/content/lessons/lesson-4-4"
+import {
+  Lesson4_5Content,
+  lesson4_5Meta,
+} from "@/content/lessons/lesson-4-5"
 
 interface LessonPageProps {
   params: Promise<{ weekId: string; lessonId: string }>
@@ -140,7 +160,26 @@ const lessonRegistry: Record<
     Content: Lesson3_5Content,
     objective: lesson3_5Meta.learningObjective,
   },
-  // Future lessons will be added here by Plans 05-06
+  "4-gas-optimization": {
+    Content: Lesson4_1Content,
+    objective: lesson4_1Meta.learningObjective,
+  },
+  "4-security-best-practices": {
+    Content: Lesson4_2Content,
+    objective: lesson4_2Meta.learningObjective,
+  },
+  "4-confidential-defi-concepts": {
+    Content: Lesson4_3Content,
+    objective: lesson4_3Meta.learningObjective,
+  },
+  "4-testing-strategies": {
+    Content: Lesson4_4Content,
+    objective: lesson4_4Meta.learningObjective,
+  },
+  "4-testnet-deployment": {
+    Content: Lesson4_5Content,
+    objective: lesson4_5Meta.learningObjective,
+  },
 }
 
 export async function generateStaticParams() {
