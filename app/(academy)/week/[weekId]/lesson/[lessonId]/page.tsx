@@ -8,9 +8,25 @@ import {
 } from "@/lib/curriculum"
 import { LessonLayout } from "@/components/layout/lesson-layout"
 import {
+  Lesson1_1Content,
+  lesson1_1Meta,
+} from "@/content/lessons/lesson-1-1"
+import {
+  Lesson1_2Content,
+  lesson1_2Meta,
+} from "@/content/lessons/lesson-1-2"
+import {
+  Lesson1_3Content,
+  lesson1_3Meta,
+} from "@/content/lessons/lesson-1-3"
+import {
   Lesson1_4Content,
   lesson1_4Meta,
 } from "@/content/lessons/lesson-1-4"
+import {
+  Lesson1_5Content,
+  lesson1_5Meta,
+} from "@/content/lessons/lesson-1-5"
 
 interface LessonPageProps {
   params: Promise<{ weekId: string; lessonId: string }>
@@ -24,11 +40,27 @@ const lessonRegistry: Record<
     objective: string
   }
 > = {
+  "1-why-privacy-matters": {
+    Content: Lesson1_1Content,
+    objective: lesson1_1Meta.learningObjective,
+  },
+  "1-zama-ecosystem-overview": {
+    Content: Lesson1_2Content,
+    objective: lesson1_2Meta.learningObjective,
+  },
+  "1-development-environment-setup": {
+    Content: Lesson1_3Content,
+    objective: lesson1_3Meta.learningObjective,
+  },
   "1-your-first-fhevm-contract": {
     Content: Lesson1_4Content,
     objective: lesson1_4Meta.learningObjective,
   },
-  // Future lessons will be added here by Plans 02-05
+  "1-testing-encrypted-contracts": {
+    Content: Lesson1_5Content,
+    objective: lesson1_5Meta.learningObjective,
+  },
+  // Future lessons will be added here by Plans 03-06
 }
 
 export async function generateStaticParams() {
