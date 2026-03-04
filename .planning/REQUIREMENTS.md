@@ -15,7 +15,7 @@
 - [x] **CURR-06**: Week 1 covers FHE fundamentals: why privacy matters, Zama ecosystem, dev setup, first contract migration, testing
 - [x] **CURR-07**: Week 2 covers encrypted types deep dive, all FHE operations, encrypted inputs/ZKPoK, ACL system, patterns
 - [x] **CURR-08**: Week 3 covers decryption mechanism, FHE.select patterns, on-chain randomness, frontend integration, auction/voting patterns
-- [ ] **CURR-09**: Week 4 covers gas optimization, security best practices, confidential DeFi concepts, testing strategies, testnet deployment
+- [x] **CURR-09**: Week 4 covers gas optimization, security best practices, confidential DeFi concepts, testing strategies, testnet deployment
 - [x] **CURR-10**: Syllabus page shows full 4-week curriculum overview
 
 ### Homework & Assessment
@@ -24,7 +24,7 @@
 - [x] **HW-02**: Week 1 homework: Temperature Converter migration to FHEVM
 - [x] **HW-03**: Week 2 homework: Confidential ERC-20 token with encrypted balances
 - [x] **HW-04**: Week 3 homework: Sealed-bid auction dApp (contract + frontend)
-- [ ] **HW-05**: Week 4 homework: Capstone project (student-chosen confidential dApp)
+- [x] **HW-05**: Week 4 homework: Capstone project (student-chosen confidential dApp)
 - [ ] **HW-06**: AI Grader component — generates copy-paste prompt combining rubric + student code for any AI model
 - [x] **HW-07**: Each rubric includes weighted criteria (compilation, types, ACL, tests) with Exceeds/Meets/Below thresholds
 
@@ -117,13 +117,13 @@
 | CURR-06 | Phase 3 | Complete |
 | CURR-07 | Phase 3 | Complete |
 | CURR-08 | Phase 3 | Complete |
-| CURR-09 | Phase 3 | Pending |
+| CURR-09 | Phase 3 | Complete |
 | CURR-10 | Phase 3 | Complete |
 | HW-01 | Phase 3 | Complete |
 | HW-02 | Phase 3 | Complete |
 | HW-03 | Phase 3 | Complete |
 | HW-04 | Phase 3 | Complete |
-| HW-05 | Phase 3 | Pending |
+| HW-05 | Phase 3 | Complete |
 | HW-06 | Phase 5 | Pending |
 | HW-07 | Phase 3 | Complete |
 | PLAT-01 | Phase 2 | Complete |

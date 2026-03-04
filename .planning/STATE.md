@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v0.9
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-04T10:55:34Z"
+last_updated: "2026-03-04T11:06:56Z"
 progress:
   total_phases: 3
   completed_phases: 2
   total_plans: 10
-  completed_plans: 8
+  completed_plans: 9
 ---
 
 # Project State
@@ -23,18 +23,18 @@ See: .planning/PROJECT.md (updated 2026-03-03)
 ## Current Position
 
 Phase: 3 of 5 (Curriculum Content)
-Plan: 5 of 6 in current phase
-Status: Executing Phase 3 -- Plan 04 complete
-Last activity: 2026-03-04 -- Completed 03-04-PLAN.md (Week 3 content: 5 lessons + homework with rubric)
+Plan: 6 of 6 in current phase
+Status: Executing Phase 3 -- Plan 05 complete
+Last activity: 2026-03-04 -- Completed 03-05-PLAN.md (Week 4 content: 5 lessons + capstone homework)
 
-Progress: [████████░░] 65%
+Progress: [█████████░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 7min
-- Total execution time: 0.95 hours
+- Total execution time: 1.08 hours
 
 **By Phase:**
 
@@ -42,10 +42,10 @@ Progress: [████████░░] 65%
 |-------|-------|-------|----------|
 | 1. Foundation | 2 | 21min | 10min |
 | 2. Shell & Components | 2 | 7min | 3.5min |
-| 3. Curriculum Content | 4 | 29min | 7min |
+| 3. Curriculum Content | 5 | 37min | 7min |
 
 **Recent Trend:**
-- Last 5 plans: 3min, 5min, 7min, 9min, 8min
+- Last 5 plans: 5min, 7min, 9min, 8min, 8min
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -53,6 +53,7 @@ Progress: [████████░░] 65%
 | Phase 03 P02 | 7min | 2 tasks | 7 files |
 | Phase 03 P03 | 9min | 2 tasks | 8 files |
 | Phase 03 P04 | 8min | 2 tasks | 8 files |
+| Phase 03 P05 | 8min | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -92,6 +93,9 @@ Recent decisions affecting current work:
 - [03-04]: Lesson 3.1 uses v0.9 self-relaying decryption (FHE.makePubliclyDecryptable + relayer SDK) -- NOT deprecated Gateway
 - [03-04]: Week 3 homework is full-stack (contract + React frontend) -- most ambitious assignment so far
 - [03-04]: Sealed-bid auction homework uses Advanced difficulty (red/error badge) reflecting contract + frontend + testing scope
+- [03-05]: Capstone homework uses purple/secondary color accents for category option cards to differentiate from regular homework
+- [03-05]: FHEVM feature depth tiers (3 min, 4 expected, 5+ exceeds) provide clear grading without being prescriptive
+- [03-05]: All 20 lessons (1.1-4.5) now have full content -- zero placeholders remaining in curriculum
 
 ### Pending Todos
 
@@ -106,5 +110,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Completed 03-04-PLAN.md (Week 3 content: 5 lessons + homework)
-Resume file: .planning/phases/03-full-curriculum-content/03-04-SUMMARY.md
+Stopped at: Completed 03-05-PLAN.md (Week 4 content: 5 lessons + capstone homework)
+Resume file: .planning/phases/03-full-curriculum-content/03-05-SUMMARY.md
