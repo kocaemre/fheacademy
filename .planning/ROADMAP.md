@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation and FHEVM Research** - Project skeleton, verified FHEVM v0.9 reference, curriculum outline
 - [ ] **Phase 2: Platform Shell and Core Components** - Layouts, navigation, CodeDiff, Quiz, InstructorNotes, Zama dark theme
-- [ ] **Phase 3: Full Curriculum Content** - All 20 lessons, 4 homework assignments, quizzes, instructor notes, syllabus
+- [x] **Phase 3: Full Curriculum Content** - All 20 lessons, 4 homework assignments, quizzes, instructor notes, syllabus
 - [ ] **Phase 4: Auth, Progress, and Backend** - Wallet auth, Supabase progress sync, MarkAsComplete, progress bars
 - [ ] **Phase 5: Dashboard, Landing Page, and Polish** - Dashboard, landing page, AI Grader, Hardhat monorepo, responsive polish, deployment
 
@@ -67,10 +67,10 @@ Plans:
 Plans:
 - [x] 03-01: Infrastructure — data model extension, lesson content architecture, homework route, syllabus skeleton, week overview enrichment
 - [x] 03-02: Week 1 content — lessons 1.1-1.5, Temperature Converter homework
-- [ ] 03-03: Week 2 content — lessons 2.1-2.5, Confidential ERC-20 homework
-- [ ] 03-04: Week 3 content — lessons 3.1-3.5, Sealed-Bid Auction homework
-- [ ] 03-05: Week 4 content — lessons 4.1-4.5, Capstone Project homework
-- [ ] 03-06: Syllabus finalization, FHEVM accuracy verification, human sign-off
+- [x] 03-03: Week 2 content — lessons 2.1-2.5, Confidential ERC-20 homework
+- [x] 03-04: Week 3 content — lessons 3.1-3.5, Sealed-Bid Auction homework
+- [x] 03-05: Week 4 content — lessons 4.1-4.5, Capstone Project homework
+- [x] 03-06: Syllabus finalization, FHEVM accuracy verification, human sign-off
 
 ### Phase 4: Auth, Progress, and Backend
 **Goal**: Users can connect their wallet and their lesson completion progress persists across devices via Supabase, with visual progress indicators throughout the platform
@@ -113,6 +113,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Foundation and FHEVM Research | 2/2 | Complete | 2026-03-03 |
 | 2. Platform Shell and Core Components | 2/2 | Complete | 2026-03-03 |
-| 3. Full Curriculum Content | 0/6 | Not started | - |
+| 3. Full Curriculum Content | 6/6 | Complete | 2026-03-04 |
 | 4. Auth, Progress, and Backend | 0/2 | Not started | - |
 | 5. Dashboard, Landing Page, and Polish | 0/3 | Not started | - |
