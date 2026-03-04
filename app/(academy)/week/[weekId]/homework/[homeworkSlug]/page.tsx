@@ -3,6 +3,8 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowLeft, CheckCircle2, BookOpen } from "lucide-react"
 import { getWeek, curriculum } from "@/lib/curriculum"
+import { MarkComplete } from "@/components/ui/mark-complete"
+import { getItemId } from "@/lib/progress"
 import { Homework1Content } from "@/content/homework/homework-1"
 import { Homework2Content } from "@/content/homework/homework-2"
 import { Homework3Content } from "@/content/homework/homework-3"
@@ -77,6 +79,7 @@ export default async function HomeworkPage({ params }: HomeworkPageProps) {
   const difficulty = difficultyStyles[homework.difficulty]
   const key = `${weekNum}-${homeworkSlug}`
   const Content = homeworkContent[key]
+  const itemId = getItemId("homework", weekNum, homeworkSlug)
 
   // If homework has authored content, render it
   if (Content) {
@@ -94,6 +97,9 @@ export default async function HomeworkPage({ params }: HomeworkPageProps) {
             <span className="text-foreground">Homework</span>
           </nav>
           <Content />
+          <div className="mt-8 mb-4">
+            <MarkComplete itemId={itemId} />
+          </div>
         </div>
       </div>
     )
@@ -262,6 +268,11 @@ export default async function HomeworkPage({ params }: HomeworkPageProps) {
             </ul>
           </div>
         </section>
+
+        {/* Mark as Complete */}
+        <div className="mt-8 mb-4">
+          <MarkComplete itemId={itemId} />
+        </div>
 
         {/* Back to Week */}
         <div className="mt-10 border-t border-border pt-6">

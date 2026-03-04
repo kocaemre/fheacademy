@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ChevronRight, ArrowLeft, ArrowRight } from "lucide-react"
+import { MarkComplete } from "@/components/ui/mark-complete"
 
 interface LessonLayoutProps {
   weekId: number
@@ -10,6 +11,7 @@ interface LessonLayoutProps {
   children: React.ReactNode
   prev?: { weekId: number; lesson: { slug: string; title: string } }
   next?: { weekId: number; lesson: { slug: string; title: string } }
+  itemId?: string
 }
 
 export function LessonLayout({
@@ -21,6 +23,7 @@ export function LessonLayout({
   children,
   prev,
   next,
+  itemId,
 }: LessonLayoutProps) {
   return (
     <div className="px-6 py-8 lg:px-10">
@@ -50,6 +53,13 @@ export function LessonLayout({
       <div className="lesson-content max-w-3xl">
         {children}
       </div>
+
+      {/* Mark as Complete */}
+      {itemId && (
+        <div className="mt-8 mb-4 max-w-3xl">
+          <MarkComplete itemId={itemId} />
+        </div>
+      )}
 
       {/* Prev/Next navigation */}
       <nav className="mt-16 flex max-w-3xl items-center justify-between border-t border-border pt-6">

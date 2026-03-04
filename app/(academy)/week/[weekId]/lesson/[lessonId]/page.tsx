@@ -7,6 +7,7 @@ import {
   getAllLessons,
 } from "@/lib/curriculum"
 import { LessonLayout } from "@/components/layout/lesson-layout"
+import { getItemId } from "@/lib/progress"
 import {
   Lesson1_1Content,
   lesson1_1Meta,
@@ -221,6 +222,8 @@ export default async function LessonPage({ params }: LessonPageProps) {
   const key = `${weekNum}-${lessonId}`
   const lessonData = lessonRegistry[key]
 
+  const itemId = getItemId("lesson", weekNum, lessonId)
+
   if (lessonData) {
     const { Content, objective } = lessonData
     return (
@@ -232,6 +235,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
         learningObjective={objective}
         prev={adjacent.prev}
         next={adjacent.next}
+        itemId={itemId}
       >
         <Content />
       </LessonLayout>
@@ -250,6 +254,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
       learningObjective={`Lesson ${lesson.id}: ${lesson.title}`}
       prev={adjacent.prev}
       next={adjacent.next}
+      itemId={itemId}
     >
       <div className="rounded-lg border border-border bg-card p-8 text-center">
         <p className="text-muted-foreground">
