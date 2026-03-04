@@ -56,12 +56,31 @@ export default function SyllabusPage() {
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
             FHEVM Developer Bootcamp
           </h1>
-          <p className="text-lg text-text-secondary leading-relaxed mb-6">
-            A 4-week hands-on curriculum that takes you from Solidity basics
-            to building and deploying confidential smart contracts using
-            Zama&apos;s FHEVM. Learn Fully Homomorphic Encryption for
-            blockchain through progressive, project-based lessons.
+          <p className="text-lg text-text-secondary leading-relaxed mb-4">
+            A 4-week hands-on curriculum for building confidential smart
+            contracts with Zama&apos;s FHEVM
           </p>
+          <div className="space-y-3 text-text-secondary leading-relaxed mb-6">
+            <p>
+              This bootcamp uses a <strong className="text-foreground">Migration Mindset</strong> approach:
+              every lesson starts with familiar Solidity code and shows you,
+              side-by-side, how to transform it into a confidential FHEVM
+              contract. You will never stare at encrypted types in isolation --
+              you will always see where they came from and why.
+            </p>
+            <p>
+              Each week builds on the last. You start by migrating a simple
+              counter, graduate to encrypted tokens and access control, build
+              full-stack dApps with React frontends, and finish with a
+              capstone project you design yourself. By the end, you will have
+              deployed a real confidential dApp to testnet.
+            </p>
+            <p>
+              No prior FHE knowledge is required. If you can write a Solidity
+              contract and run Hardhat tests, you have everything you need to
+              get started.
+            </p>
+          </div>
 
           {/* Course Info Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -110,6 +129,13 @@ export default function SyllabusPage() {
                 <Target className="mt-0.5 size-4 shrink-0 text-primary/60" />
                 <span className="leading-relaxed">
                   Basic React knowledge for frontend integration lessons
+                </span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Target className="mt-0.5 size-4 shrink-0 text-primary/60" />
+                <span className="leading-relaxed">
+                  No prior FHE or cryptography knowledge required -- the
+                  course teaches everything from scratch
                 </span>
               </li>
             </ul>
@@ -168,20 +194,20 @@ export default function SyllabusPage() {
                 on each other progressively
               </li>
               <li className="leading-relaxed">
-                Complete the hands-on exercises in each lesson before moving
-                to the next
+                Study the side-by-side code comparisons (CodeDiff) to
+                understand the Solidity to FHEVM migration pattern
               </li>
               <li className="leading-relaxed">
-                Use the side-by-side code comparisons to understand the
-                Solidity to FHEVM migration pattern
+                Complete the quizzes at the end of each lesson to test your
+                understanding before moving on
               </li>
               <li className="leading-relaxed">
-                Complete each week&apos;s homework to solidify your
-                understanding before advancing
+                Complete each week&apos;s homework assignment to solidify
+                your skills before advancing
               </li>
               <li className="leading-relaxed">
-                Reference the FHEVM API guide and Solidity migration guide in
-                the sidebar for quick lookups
+                If you are an instructor, expand the Instructor Notes in each
+                lesson for teaching tips and common student misconceptions
               </li>
             </ol>
           </div>
@@ -196,7 +222,7 @@ export default function SyllabusPage() {
             return (
               <div
                 key={week.id}
-                className="rounded-xl border border-border bg-card overflow-hidden"
+                className="rounded-xl border border-border bg-card overflow-hidden border-l-4 border-l-primary"
               >
                 {/* Week Header */}
                 <div className="border-b border-border bg-card/80 px-6 py-5">
