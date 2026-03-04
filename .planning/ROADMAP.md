@@ -27,11 +27,11 @@
   2. User can mark a lesson as complete and see that completion persist after page reload and across devices (when wallet is connected)
   3. Progress bars show accurate per-lesson, per-week, and overall completion percentages based on marked lessons
   4. Progress works with localStorage fallback when no wallet is connected, and syncs to Supabase when a wallet is connected
-**Plans**: TBD
+**Plans**: 2
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [x] 04-01: Auth Infrastructure — thirdweb + Supabase setup, ProgressProvider context, API route (Wave 1)
+- [ ] 04-02: Progress UI Integration — ConnectButton, MarkComplete, progress bars, sidebar indicators (Wave 2)
 
 ### Phase 5: Dashboard, Landing Page, and Polish
 **Goal**: The platform has a polished landing page, a functional dashboard, the AI Grader differentiator, the Hardhat monorepo, and is submission-ready with responsive design verified
@@ -57,5 +57,5 @@ Plans:
 | 1. Foundation and FHEVM Research | v0.9 | 2/2 | Complete | 2026-03-03 |
 | 2. Platform Shell and Core Components | v0.9 | 2/2 | Complete | 2026-03-03 |
 | 3. Full Curriculum Content | v0.9 | 6/6 | Complete | 2026-03-04 |
-| 4. Auth, Progress, and Backend | v1.0 | 0/2 | Not started | - |
+| 4. Auth, Progress, and Backend | v1.0 | 1/2 | In progress | - |
 | 5. Dashboard, Landing Page, and Polish | v1.0 | 0/3 | Not started | - |
