@@ -14,7 +14,7 @@
 - [x] **CURR-05**: All FHEVM code examples use current v0.9 API (`FHE.*` syntax, self-relaying decryption, `externalEuint` inputs)
 - [x] **CURR-06**: Week 1 covers FHE fundamentals: why privacy matters, Zama ecosystem, dev setup, first contract migration, testing
 - [x] **CURR-07**: Week 2 covers encrypted types deep dive, all FHE operations, encrypted inputs/ZKPoK, ACL system, patterns
-- [ ] **CURR-08**: Week 3 covers decryption mechanism, FHE.select patterns, on-chain randomness, frontend integration, auction/voting patterns
+- [x] **CURR-08**: Week 3 covers decryption mechanism, FHE.select patterns, on-chain randomness, frontend integration, auction/voting patterns
 - [ ] **CURR-09**: Week 4 covers gas optimization, security best practices, confidential DeFi concepts, testing strategies, testnet deployment
 - [x] **CURR-10**: Syllabus page shows full 4-week curriculum overview
 
@@ -23,7 +23,7 @@
 - [x] **HW-01**: 4 weekly homework assignments with detailed specs, starter code references, and grading rubrics
 - [x] **HW-02**: Week 1 homework: Temperature Converter migration to FHEVM
 - [x] **HW-03**: Week 2 homework: Confidential ERC-20 token with encrypted balances
-- [ ] **HW-04**: Week 3 homework: Sealed-bid auction dApp (contract + frontend)
+- [x] **HW-04**: Week 3 homework: Sealed-bid auction dApp (contract + frontend)
 - [ ] **HW-05**: Week 4 homework: Capstone project (student-chosen confidential dApp)
 - [ ] **HW-06**: AI Grader component — generates copy-paste prompt combining rubric + student code for any AI model
 - [x] **HW-07**: Each rubric includes weighted criteria (compilation, types, ACL, tests) with Exceeds/Meets/Below thresholds
@@ -116,13 +116,13 @@
 | CURR-05 | Phase 1 | Complete |
 | CURR-06 | Phase 3 | Complete |
 | CURR-07 | Phase 3 | Complete |
-| CURR-08 | Phase 3 | Pending |
+| CURR-08 | Phase 3 | Complete |
 | CURR-09 | Phase 3 | Pending |
 | CURR-10 | Phase 3 | Complete |
 | HW-01 | Phase 3 | Complete |
 | HW-02 | Phase 3 | Complete |
 | HW-03 | Phase 3 | Complete |
-| HW-04 | Phase 3 | Pending |
+| HW-04 | Phase 3 | Complete |
 | HW-05 | Phase 3 | Pending |
 | HW-06 | Phase 5 | Pending |
 | HW-07 | Phase 3 | Complete |
