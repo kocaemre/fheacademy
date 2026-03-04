@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import { ArrowLeft, CheckCircle2, BookOpen } from "lucide-react"
 import { getWeek, curriculum } from "@/lib/curriculum"
 import { Homework1Content } from "@/content/homework/homework-1"
+import { Homework2Content } from "@/content/homework/homework-2"
 
 interface HomeworkPageProps {
   params: Promise<{ weekId: string; homeworkSlug: string }>
@@ -12,7 +13,8 @@ interface HomeworkPageProps {
 // Content registry: maps "weekId-homeworkSlug" to content component
 const homeworkContent: Record<string, React.ComponentType> = {
   "1-temperature-converter-migration": Homework1Content,
-  // Future homework content will be added here by Plans 03-06
+  "2-confidential-erc20-token": Homework2Content,
+  // Future homework content will be added here by Plans 04-06
 }
 
 const difficultyStyles: Record<
