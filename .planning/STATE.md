@@ -57,5 +57,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Completed v0.9 milestone archival
-Resume file: .planning/MILESTONES.md
+Stopped at: Phase 4 context gathered
+Resume file: .planning/phases/04-auth-progress-and-backend/04-CONTEXT.md
