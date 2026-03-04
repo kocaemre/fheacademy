@@ -27,6 +27,26 @@ import {
   Lesson1_5Content,
   lesson1_5Meta,
 } from "@/content/lessons/lesson-1-5"
+import {
+  Lesson2_1Content,
+  lesson2_1Meta,
+} from "@/content/lessons/lesson-2-1"
+import {
+  Lesson2_2Content,
+  lesson2_2Meta,
+} from "@/content/lessons/lesson-2-2"
+import {
+  Lesson2_3Content,
+  lesson2_3Meta,
+} from "@/content/lessons/lesson-2-3"
+import {
+  Lesson2_4Content,
+  lesson2_4Meta,
+} from "@/content/lessons/lesson-2-4"
+import {
+  Lesson2_5Content,
+  lesson2_5Meta,
+} from "@/content/lessons/lesson-2-5"
 
 interface LessonPageProps {
   params: Promise<{ weekId: string; lessonId: string }>
@@ -60,7 +80,27 @@ const lessonRegistry: Record<
     Content: Lesson1_5Content,
     objective: lesson1_5Meta.learningObjective,
   },
-  // Future lessons will be added here by Plans 03-06
+  "2-encrypted-types-deep-dive": {
+    Content: Lesson2_1Content,
+    objective: lesson2_1Meta.learningObjective,
+  },
+  "2-operations-on-encrypted-data": {
+    Content: Lesson2_2Content,
+    objective: lesson2_2Meta.learningObjective,
+  },
+  "2-encrypted-inputs-and-zkpok": {
+    Content: Lesson2_3Content,
+    objective: lesson2_3Meta.learningObjective,
+  },
+  "2-access-control-list-system": {
+    Content: Lesson2_4Content,
+    objective: lesson2_4Meta.learningObjective,
+  },
+  "2-patterns-and-best-practices": {
+    Content: Lesson2_5Content,
+    objective: lesson2_5Meta.learningObjective,
+  },
+  // Future lessons will be added here by Plans 04-06
 }
 
 export async function generateStaticParams() {
