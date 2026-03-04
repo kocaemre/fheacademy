@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThirdwebProviderWrapper } from "@/components/providers/thirdweb-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground`}
       >
-        {children}
+        <ThirdwebProviderWrapper>{children}</ThirdwebProviderWrapper>
       </body>
     </html>
   );
