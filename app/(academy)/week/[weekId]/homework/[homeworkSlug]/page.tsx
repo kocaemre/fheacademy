@@ -6,6 +6,7 @@ import { getWeek, curriculum } from "@/lib/curriculum"
 import { Homework1Content } from "@/content/homework/homework-1"
 import { Homework2Content } from "@/content/homework/homework-2"
 import { Homework3Content } from "@/content/homework/homework-3"
+import { Homework4Content } from "@/content/homework/homework-4"
 
 interface HomeworkPageProps {
   params: Promise<{ weekId: string; homeworkSlug: string }>
@@ -16,7 +17,7 @@ const homeworkContent: Record<string, React.ComponentType> = {
   "1-temperature-converter-migration": Homework1Content,
   "2-confidential-erc20-token": Homework2Content,
   "3-sealed-bid-auction-dapp": Homework3Content,
-  // Future homework content will be added here by Plans 05-06
+  "4-capstone-confidential-dapp": Homework4Content,
 }
 
 const difficultyStyles: Record<
