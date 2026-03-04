@@ -238,25 +238,27 @@ export default async function LessonPage({ params }: LessonPageProps) {
     )
   }
 
-  // Fallback placeholder for lessons not yet authored
+  // Safety fallback -- all 20 lessons are registered above
+  // If this renders, it means a new lesson was added to curriculum.ts
+  // but not yet authored in content/lessons/
   return (
     <LessonLayout
       weekId={week.id}
       weekTitle={week.title}
       lessonId={lesson.id}
       lessonTitle={lesson.title}
-      learningObjective={`Lesson ${lesson.id} content is a ${lesson.type} lesson. Full content will be added in Phase 3.`}
+      learningObjective={`Lesson ${lesson.id}: ${lesson.title}`}
       prev={adjacent.prev}
       next={adjacent.next}
     >
       <div className="rounded-lg border border-border bg-card p-8 text-center">
         <p className="text-muted-foreground">
-          Lesson content coming soon.
+          This lesson has not been authored yet.
         </p>
         <p className="mt-2 text-sm text-muted-foreground/60">
-          This is a placeholder for{" "}
+          Content for{" "}
           <span className="font-medium text-foreground">{lesson.title}</span>{" "}
-          ({lesson.type} lesson).
+          needs to be added to the content registry.
         </p>
       </div>
     </LessonLayout>
