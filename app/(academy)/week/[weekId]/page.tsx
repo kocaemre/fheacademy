@@ -8,6 +8,7 @@ import {
   CheckCircle2,
 } from "lucide-react"
 import { getWeek, curriculum } from "@/lib/curriculum"
+import { WeekProgressClient } from "@/components/ui/week-progress-client"
 
 interface WeekPageProps {
   params: Promise<{ weekId: string }>
@@ -90,6 +91,9 @@ export default async function WeekPage({ params }: WeekPageProps) {
             {narrative}
           </p>
         )}
+
+        {/* Per-Week Progress */}
+        <WeekProgressClient weekId={week.id} />
 
         {/* Learning Objectives */}
         <section className="mb-10">

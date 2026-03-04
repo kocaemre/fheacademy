@@ -11,6 +11,7 @@ import {
   Rocket,
 } from "lucide-react"
 import { curriculum } from "@/lib/curriculum"
+import { SyllabusWeekProgress } from "@/components/ui/syllabus-week-progress"
 
 export const metadata: Metadata = {
   title: "Syllabus | FHE Academy",
@@ -243,6 +244,7 @@ export default function SyllabusPage() {
                       <p className="mt-1 text-text-secondary leading-relaxed">
                         {week.goal}
                       </p>
+                      <SyllabusWeekProgress weekId={week.id} />
                     </div>
                   </div>
                 </div>

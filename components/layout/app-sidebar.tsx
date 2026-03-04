@@ -8,8 +8,15 @@ import {
   FileCode,
   FileText,
   Circle,
+  CheckCircle,
 } from "lucide-react"
 import { curriculum } from "@/lib/curriculum"
+import { useProgress } from "@/components/providers/progress-provider"
+import { ProgressBar } from "@/components/ui/progress-bar"
+import { getItemId } from "@/lib/progress"
+import { ConnectButton, darkTheme } from "thirdweb/react"
+import { useActiveAccount } from "thirdweb/react"
+import { thirdwebClient } from "@/lib/thirdweb-client"
 import {
   Sidebar,
   SidebarContent,
@@ -31,8 +38,32 @@ import {
 } from "@/components/ui/collapsible"
 import { cn } from "@/lib/utils"
 
+const sidebarTheme = darkTheme({
+  colors: {
+    modalBg: "#13131A",
+    primaryButtonBg: "#F5C518",
+    primaryButtonText: "#0A0A0F",
+    accentButtonBg: "#8B5CF6",
+    accentButtonText: "#F1F1F3",
+    accentText: "#F5C518",
+    borderColor: "#1E1E2E",
+    separatorLine: "#1E1E2E",
+    primaryText: "#F1F1F3",
+    secondaryText: "#9191A4",
+    connectedButtonBg: "#1A1A24",
+    connectedButtonBgHover: "#252540",
+    tertiaryBg: "#0A0A0F",
+  },
+})
+
+function truncateAddress(address: string): string {
+  return `${address.slice(0, 6)}...${address.slice(-4)}`
+}
+
 export function AppSidebar() {
   const pathname = usePathname()
+  const { isComplete, weekProgress, overallProgress, isLoading } = useProgress()
+  const account = useActiveAccount()
 
   return (
     <Sidebar>
@@ -73,9 +104,21 @@ export function AppSidebar() {
                       >
                         <Link href={weekPath}>
                           <BookOpen className="size-4 shrink-0 text-sidebar-primary/70" />
-                          <span className="truncate font-medium">
-                            Week {week.id}: {week.title}
-                          </span>
+                          <div className="flex-1 min-w-0">
+                            <span className="truncate font-medium block">
+                              Week {week.id}: {week.title}
+                            </span>
+                            {(() => {
+                              const wp = weekProgress(week.id)
+                              return (
+                                <ProgressBar
+                                  completed={wp.completed}
+                                  total={wp.total}
+                                  className="mt-0.5"
+                                />
+                              )
+                            })()}
+                          </div>
                         </Link>
                       </SidebarMenuButton>
                       <CollapsibleTrigger asChild>
@@ -94,6 +137,8 @@ export function AppSidebar() {
                           {week.lessons.map((lesson) => {
                             const lessonPath = `/week/${week.id}/lesson/${lesson.slug}`
                             const isLessonActive = pathname === lessonPath
+                            const lessonItemId = getItemId("lesson", week.id, lesson.slug)
+                            const lessonDone = !isLoading && isComplete(lessonItemId)
 
                             return (
                               <SidebarMenuSubItem key={lesson.id}>
@@ -107,7 +152,11 @@ export function AppSidebar() {
                                   }
                                 >
                                   <Link href={lessonPath}>
-                                    <Circle className="size-2 shrink-0 text-sidebar-foreground/20" />
+                                    {lessonDone ? (
+                                      <CheckCircle className="size-3 shrink-0 text-success" />
+                                    ) : (
+                                      <Circle className="size-2 shrink-0 text-sidebar-foreground/20" />
+                                    )}
                                     <span className="truncate">
                                       {lesson.id} {lesson.title}
                                     </span>
@@ -118,25 +167,35 @@ export function AppSidebar() {
                           })}
 
                           {/* Homework entry */}
-                          <SidebarMenuSubItem>
-                            <SidebarMenuSubButton
-                              asChild
-                              isActive={
-                                pathname ===
-                                `/week/${week.id}/homework/${week.homework.slug}`
-                              }
-                              className="text-sidebar-foreground/60"
-                            >
-                              <Link
-                                href={`/week/${week.id}/homework/${week.homework.slug}`}
-                              >
-                                <FileCode className="size-3 shrink-0 text-sidebar-primary/40" />
-                                <span className="truncate text-xs">
-                                  HW: {week.homework.title}
-                                </span>
-                              </Link>
-                            </SidebarMenuSubButton>
-                          </SidebarMenuSubItem>
+                          {(() => {
+                            const hwItemId = getItemId("homework", week.id, week.homework.slug)
+                            const hwDone = !isLoading && isComplete(hwItemId)
+                            return (
+                              <SidebarMenuSubItem>
+                                <SidebarMenuSubButton
+                                  asChild
+                                  isActive={
+                                    pathname ===
+                                    `/week/${week.id}/homework/${week.homework.slug}`
+                                  }
+                                  className="text-sidebar-foreground/60"
+                                >
+                                  <Link
+                                    href={`/week/${week.id}/homework/${week.homework.slug}`}
+                                  >
+                                    {hwDone ? (
+                                      <CheckCircle className="size-3 shrink-0 text-success" />
+                                    ) : (
+                                      <FileCode className="size-3 shrink-0 text-sidebar-primary/40" />
+                                    )}
+                                    <span className="truncate text-xs">
+                                      HW: {week.homework.title}
+                                    </span>
+                                  </Link>
+                                </SidebarMenuSubButton>
+                              </SidebarMenuSubItem>
+                            )
+                          })()}
                         </SidebarMenuSub>
                       </SidebarGroupContent>
                     </CollapsibleContent>
@@ -149,9 +208,32 @@ export function AppSidebar() {
       </SidebarContent>
 
       <SidebarFooter className="border-t border-sidebar-border px-4 py-3">
-        <p className="text-xs text-sidebar-foreground/40">
-          Powered by Zama
-        </p>
+        {account ? (
+          <div className="flex flex-col gap-1">
+            <p className="text-xs font-mono text-sidebar-foreground/60">
+              {truncateAddress(account.address)}
+            </p>
+            {(() => {
+              const overall = overallProgress()
+              return (
+                <p className="text-xs text-sidebar-foreground/40">
+                  {overall.completed}/{overall.total} lessons
+                </p>
+              )
+            })()}
+          </div>
+        ) : (
+          <div className="flex flex-col gap-2">
+            <ConnectButton
+              client={thirdwebClient}
+              theme={sidebarTheme}
+              connectButton={{ label: "Connect Wallet" }}
+            />
+            <p className="text-xs text-sidebar-foreground/40">
+              Powered by Zama
+            </p>
+          </div>
+        )}
       </SidebarFooter>
     </Sidebar>
   )
