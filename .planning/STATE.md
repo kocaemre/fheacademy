@@ -8,7 +8,7 @@ progress:
   total_phases: 3
   completed_phases: 2
   total_plans: 10
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Project State
@@ -23,18 +23,18 @@ See: .planning/PROJECT.md (updated 2026-03-03)
 ## Current Position
 
 Phase: 3 of 5 (Curriculum Content)
-Plan: 2 of 6 in current phase
-Status: Executing Phase 3 -- Plan 01 complete
-Last activity: 2026-03-04 -- Completed 03-01-PLAN.md (Content architecture: registry pattern, homework/syllabus routes, enriched data model)
+Plan: 3 of 6 in current phase
+Status: Executing Phase 3 -- Plan 02 complete
+Last activity: 2026-03-04 -- Completed 03-02-PLAN.md (Week 1 content: 4 lessons + homework with rubric)
 
-Progress: [████░░░░░░] 36%
+Progress: [█████░░░░░] 45%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: 7min
-- Total execution time: 0.55 hours
+- Total execution time: 0.67 hours
 
 **By Phase:**
 
@@ -42,14 +42,15 @@ Progress: [████░░░░░░] 36%
 |-------|-------|-------|----------|
 | 1. Foundation | 2 | 21min | 10min |
 | 2. Shell & Components | 2 | 7min | 3.5min |
-| 3. Curriculum Content | 1 | 5min | 5min |
+| 3. Curriculum Content | 2 | 12min | 6min |
 
 **Recent Trend:**
-- Last 5 plans: 9min, 12min, 4min, 3min, 5min
+- Last 5 plans: 12min, 4min, 3min, 5min, 7min
 - Trend: Stable-fast
 
 *Updated after each plan completion*
 | Phase 03 P01 | 5min | 2 tasks | 7 files |
+| Phase 03 P02 | 7min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -80,6 +81,9 @@ Recent decisions affecting current work:
 - [03-01]: Content registry pattern maps weekNum-lessonSlug keys to imported content components for extensible lesson dispatching
 - [03-01]: Homework skeleton renders from enriched curriculum.ts data when content not yet authored
 - [03-01]: Syllabus placed in (academy) layout group to share sidebar navigation
+- [03-02]: Homework content files in content/homework/homework-X.tsx parallel to content/lessons/ pattern
+- [03-02]: Quiz IDs follow X.Y-qN format for global uniqueness across all 20 lessons
+- [03-02]: Homework shows transformation direction via CodeDiff but not complete solution
 
 ### Pending Todos
 
@@ -94,5 +98,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Completed 03-01-PLAN.md (Content architecture)
-Resume file: .planning/phases/03-full-curriculum-content/03-01-SUMMARY.md
+Stopped at: Completed 03-02-PLAN.md (Week 1 content: 4 lessons + homework)
+Resume file: .planning/phases/03-full-curriculum-content/03-02-SUMMARY.md

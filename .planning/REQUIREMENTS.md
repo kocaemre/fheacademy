@@ -8,11 +8,11 @@
 ### Curriculum
 
 - [x] **CURR-01**: Platform delivers 20 lessons across 4 weeks covering FHEVM from basics to production patterns
-- [ ] **CURR-02**: Every lesson follows "Migration Mindset" — showing Solidity pattern transforming to FHEVM equivalent
-- [ ] **CURR-03**: Each lesson includes 2-3 inline multiple-choice quiz questions with correct answers and explanations
-- [ ] **CURR-04**: Each lesson includes collapsible instructor notes section with teaching guidance and common mistakes
+- [x] **CURR-02**: Every lesson follows "Migration Mindset" — showing Solidity pattern transforming to FHEVM equivalent
+- [x] **CURR-03**: Each lesson includes 2-3 inline multiple-choice quiz questions with correct answers and explanations
+- [x] **CURR-04**: Each lesson includes collapsible instructor notes section with teaching guidance and common mistakes
 - [x] **CURR-05**: All FHEVM code examples use current v0.9 API (`FHE.*` syntax, self-relaying decryption, `externalEuint` inputs)
-- [ ] **CURR-06**: Week 1 covers FHE fundamentals: why privacy matters, Zama ecosystem, dev setup, first contract migration, testing
+- [x] **CURR-06**: Week 1 covers FHE fundamentals: why privacy matters, Zama ecosystem, dev setup, first contract migration, testing
 - [ ] **CURR-07**: Week 2 covers encrypted types deep dive, all FHE operations, encrypted inputs/ZKPoK, ACL system, patterns
 - [ ] **CURR-08**: Week 3 covers decryption mechanism, FHE.select patterns, on-chain randomness, frontend integration, auction/voting patterns
 - [ ] **CURR-09**: Week 4 covers gas optimization, security best practices, confidential DeFi concepts, testing strategies, testnet deployment
@@ -21,12 +21,12 @@
 ### Homework & Assessment
 
 - [x] **HW-01**: 4 weekly homework assignments with detailed specs, starter code references, and grading rubrics
-- [ ] **HW-02**: Week 1 homework: Temperature Converter migration to FHEVM
+- [x] **HW-02**: Week 1 homework: Temperature Converter migration to FHEVM
 - [ ] **HW-03**: Week 2 homework: Confidential ERC-20 token with encrypted balances
 - [ ] **HW-04**: Week 3 homework: Sealed-bid auction dApp (contract + frontend)
 - [ ] **HW-05**: Week 4 homework: Capstone project (student-chosen confidential dApp)
 - [ ] **HW-06**: AI Grader component — generates copy-paste prompt combining rubric + student code for any AI model
-- [ ] **HW-07**: Each rubric includes weighted criteria (compilation, types, ACL, tests) with Exceeds/Meets/Below thresholds
+- [x] **HW-07**: Each rubric includes weighted criteria (compilation, types, ACL, tests) with Exceeds/Meets/Below thresholds
 
 ### Platform & Navigation
 
@@ -110,22 +110,22 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | CURR-01 | Phase 3 | Complete |
-| CURR-02 | Phase 3 | Pending |
-| CURR-03 | Phase 3 | Pending |
-| CURR-04 | Phase 3 | Pending |
+| CURR-02 | Phase 3 | Complete |
+| CURR-03 | Phase 3 | Complete |
+| CURR-04 | Phase 3 | Complete |
 | CURR-05 | Phase 1 | Complete |
-| CURR-06 | Phase 3 | Pending |
+| CURR-06 | Phase 3 | Complete |
 | CURR-07 | Phase 3 | Pending |
 | CURR-08 | Phase 3 | Pending |
 | CURR-09 | Phase 3 | Pending |
 | CURR-10 | Phase 3 | Complete |
 | HW-01 | Phase 3 | Complete |
-| HW-02 | Phase 3 | Pending |
+| HW-02 | Phase 3 | Complete |
 | HW-03 | Phase 3 | Pending |
 | HW-04 | Phase 3 | Pending |
 | HW-05 | Phase 3 | Pending |
 | HW-06 | Phase 5 | Pending |
-| HW-07 | Phase 3 | Pending |
+| HW-07 | Phase 3 | Complete |
 | PLAT-01 | Phase 2 | Complete |
 | PLAT-02 | Phase 5 | Pending |
 | PLAT-03 | Phase 5 | Pending |

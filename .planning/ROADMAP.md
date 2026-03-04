@@ -65,8 +65,8 @@ Plans:
 **Plans**: 6 plans
 
 Plans:
-- [ ] 03-01: Infrastructure — data model extension, lesson content architecture, homework route, syllabus skeleton, week overview enrichment
-- [ ] 03-02: Week 1 content — lessons 1.1-1.5, Temperature Converter homework
+- [x] 03-01: Infrastructure — data model extension, lesson content architecture, homework route, syllabus skeleton, week overview enrichment
+- [x] 03-02: Week 1 content — lessons 1.1-1.5, Temperature Converter homework
 - [ ] 03-03: Week 2 content — lessons 2.1-2.5, Confidential ERC-20 homework
 - [ ] 03-04: Week 3 content — lessons 3.1-3.5, Sealed-Bid Auction homework
 - [ ] 03-05: Week 4 content — lessons 4.1-4.5, Capstone Project homework
