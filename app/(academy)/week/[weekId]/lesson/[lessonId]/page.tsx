@@ -47,6 +47,26 @@ import {
   Lesson2_5Content,
   lesson2_5Meta,
 } from "@/content/lessons/lesson-2-5"
+import {
+  Lesson3_1Content,
+  lesson3_1Meta,
+} from "@/content/lessons/lesson-3-1"
+import {
+  Lesson3_2Content,
+  lesson3_2Meta,
+} from "@/content/lessons/lesson-3-2"
+import {
+  Lesson3_3Content,
+  lesson3_3Meta,
+} from "@/content/lessons/lesson-3-3"
+import {
+  Lesson3_4Content,
+  lesson3_4Meta,
+} from "@/content/lessons/lesson-3-4"
+import {
+  Lesson3_5Content,
+  lesson3_5Meta,
+} from "@/content/lessons/lesson-3-5"
 
 interface LessonPageProps {
   params: Promise<{ weekId: string; lessonId: string }>
@@ -100,7 +120,27 @@ const lessonRegistry: Record<
     Content: Lesson2_5Content,
     objective: lesson2_5Meta.learningObjective,
   },
-  // Future lessons will be added here by Plans 04-06
+  "3-the-decryption-mechanism": {
+    Content: Lesson3_1Content,
+    objective: lesson3_1Meta.learningObjective,
+  },
+  "3-encrypted-control-flow": {
+    Content: Lesson3_2Content,
+    objective: lesson3_2Meta.learningObjective,
+  },
+  "3-on-chain-randomness": {
+    Content: Lesson3_3Content,
+    objective: lesson3_3Meta.learningObjective,
+  },
+  "3-frontend-integration": {
+    Content: Lesson3_4Content,
+    objective: lesson3_4Meta.learningObjective,
+  },
+  "3-auction-and-voting-patterns": {
+    Content: Lesson3_5Content,
+    objective: lesson3_5Meta.learningObjective,
+  },
+  // Future lessons will be added here by Plans 05-06
 }
 
 export async function generateStaticParams() {
