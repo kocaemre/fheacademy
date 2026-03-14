@@ -2,6 +2,45 @@ import Link from "next/link"
 import { CodeDiff } from "@/components/content/code-diff"
 import { CodeBlock } from "@/components/content/code-block"
 import { CalloutBox } from "@/components/content/callout-box"
+import { AIGrader, type RubricCriterion } from "@/components/content/ai-grader"
+
+const rubricCriteria: RubricCriterion[] = [
+  {
+    criterion: "Contract Logic",
+    weight: "25%",
+    exceeds: "Correct placeBid, endAuction, revealWinner with proper state management and access control",
+    meets: "Core bid and end functions work, minor state management issues",
+    below: "Missing key functions or broken auction flow",
+  },
+  {
+    criterion: "Bid Privacy",
+    weight: "20%",
+    exceeds: "All bids encrypted, losing bids never decrypted, proper ACL so bidders can only see their own bid",
+    meets: "Bids encrypted, but ACL or decryption scope has minor issues",
+    below: "Bids exposed or all bids decrypted at end",
+  },
+  {
+    criterion: "Decryption Flow",
+    weight: "20%",
+    exceeds: "Correct v0.9 self-relaying pattern with FHE.makePubliclyDecryptable, callback, and FHE.checkSignatures",
+    meets: "Decryption works but missing proof verification",
+    below: "No decryption flow or using deprecated Gateway pattern",
+  },
+  {
+    criterion: "Frontend",
+    weight: "20%",
+    exceeds: "Complete flow: connect wallet, encrypt bid, submit tx, display status, reveal winner with proper error handling",
+    meets: "Basic bid submission and winner display working",
+    below: "Frontend missing or non-functional",
+  },
+  {
+    criterion: "Documentation",
+    weight: "15%",
+    exceeds: "Clear README with architecture diagram, setup instructions, and explanation of FHEVM patterns used",
+    meets: "README with basic setup instructions and feature list",
+    below: "No README or insufficient documentation",
+  },
+]
 
 export function Homework3Content() {
   return (
@@ -521,6 +560,12 @@ contract SealedAuction
           </table>
         </div>
       </section>
+
+      {/* AI Grader */}
+      <AIGrader
+        homeworkTitle="Sealed-Bid Auction dApp"
+        rubricCriteria={rubricCriteria}
+      />
 
       {/* Submission Guidelines */}
       <section className="mb-8">

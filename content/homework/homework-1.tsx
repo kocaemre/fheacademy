@@ -2,6 +2,38 @@ import Link from "next/link"
 import { CodeDiff } from "@/components/content/code-diff"
 import { CodeBlock } from "@/components/content/code-block"
 import { CalloutBox } from "@/components/content/callout-box"
+import { AIGrader, type RubricCriterion } from "@/components/content/ai-grader"
+
+const rubricCriteria: RubricCriterion[] = [
+  {
+    criterion: "Compilation",
+    weight: "20%",
+    exceeds: "Compiles with zero warnings",
+    meets: "Compiles with minor warnings",
+    below: "Does not compile",
+  },
+  {
+    criterion: "Encrypted Types",
+    weight: "30%",
+    exceeds: "All types correctly migrated, proper casting",
+    meets: "Most types correct, minor issues",
+    below: "Incorrect types or missing migration",
+  },
+  {
+    criterion: "ACL Permissions",
+    weight: "20%",
+    exceeds: "Both allowThis and allow correctly placed",
+    meets: "Most permissions correct",
+    below: "Missing or incorrect ACL",
+  },
+  {
+    criterion: "Tests",
+    weight: "30%",
+    exceeds: "Tests for conversion, edge cases, permissions",
+    meets: "Basic conversion test passes",
+    below: "Tests missing or failing",
+  },
+]
 
 export function Homework1Content() {
   return (
@@ -453,6 +485,12 @@ function convertCtoF(
           </table>
         </div>
       </section>
+
+      {/* AI Grader */}
+      <AIGrader
+        homeworkTitle="Temperature Converter Migration"
+        rubricCriteria={rubricCriteria}
+      />
 
       {/* Submission Guidelines */}
       <section className="mb-8">
