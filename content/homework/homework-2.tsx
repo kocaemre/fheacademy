@@ -2,6 +2,45 @@ import Link from "next/link"
 import { CodeDiff } from "@/components/content/code-diff"
 import { CodeBlock } from "@/components/content/code-block"
 import { CalloutBox } from "@/components/content/callout-box"
+import { AIGrader, type RubricCriterion } from "@/components/content/ai-grader"
+
+const rubricCriteria: RubricCriterion[] = [
+  {
+    criterion: "ERC-20 Interface",
+    weight: "15%",
+    exceeds: "All standard functions adapted for FHE (mint, transfer, approve, transferFrom, balanceOf)",
+    meets: "Core functions present (mint, transfer, balanceOf)",
+    below: "Missing key functions",
+  },
+  {
+    criterion: "Encrypted Balance",
+    weight: "25%",
+    exceeds: "Proper euint64 usage, correct FHE.add/sub, initialization handling",
+    meets: "Mostly correct encrypted types and operations",
+    below: "Wrong types or broken arithmetic logic",
+  },
+  {
+    criterion: "ACL Permissions",
+    weight: "25%",
+    exceeds: "Perfect permission flow -- allowThis + allow for every state change, only owner can decrypt",
+    meets: "Most permissions correct, minor omissions",
+    below: "Missing or incorrect ACL calls",
+  },
+  {
+    criterion: "Overflow Protection",
+    weight: "15%",
+    exceeds: "FHE.select guard on all arithmetic (transfer + transferFrom)",
+    meets: "FHE.select on transfer, missing on transferFrom",
+    below: "No overflow handling",
+  },
+  {
+    criterion: "Test Coverage",
+    weight: "20%",
+    exceeds: "Mint, transfer, approve, transferFrom, edge cases, and ACL tests",
+    meets: "Basic mint + transfer tests pass",
+    below: "Tests missing or failing",
+  },
+]
 
 export function Homework2Content() {
   return (
@@ -523,6 +562,12 @@ contract ConfidentialERC20 is ZamaEthereumConfig {
           </table>
         </div>
       </section>
+
+      {/* AI Grader */}
+      <AIGrader
+        homeworkTitle="Confidential ERC-20 Token"
+        rubricCriteria={rubricCriteria}
+      />
 
       {/* Submission Guidelines */}
       <section className="mb-8">

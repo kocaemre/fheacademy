@@ -1,5 +1,44 @@
 import Link from "next/link"
 import { CalloutBox } from "@/components/content/callout-box"
+import { AIGrader, type RubricCriterion } from "@/components/content/ai-grader"
+
+const rubricCriteria: RubricCriterion[] = [
+  {
+    criterion: "Originality",
+    weight: "20%",
+    exceeds: "Novel concept that demonstrates creative use of FHE beyond course examples, addresses a real-world privacy problem",
+    meets: "Reasonable project idea, adapts course patterns to a different use case",
+    below: "Direct copy of course examples with minimal modification",
+  },
+  {
+    criterion: "Technical Correctness",
+    weight: "25%",
+    exceeds: "All FHEVM patterns correct, proper ACL, overflow protection, no deprecated APIs, passes all tests",
+    meets: "Core functionality works, minor ACL or guard issues",
+    below: "Fundamental FHEVM errors, deprecated patterns, broken core logic",
+  },
+  {
+    criterion: "FHEVM Feature Depth",
+    weight: "20%",
+    exceeds: "Uses 5+ FHEVM features meaningfully, demonstrates understanding of when and why to use each feature",
+    meets: "Uses 3-4 features correctly with reasonable justification",
+    below: "Fewer than 3 features, or features used without clear purpose",
+  },
+  {
+    criterion: "Documentation",
+    weight: "15%",
+    exceeds: "Clear README with architecture diagram, setup instructions, FHEVM features explained, and design decisions documented",
+    meets: "README with basic setup instructions and feature list",
+    below: "No README or insufficient documentation",
+  },
+  {
+    criterion: "Presentation",
+    weight: "20%",
+    exceeds: "Clear 2-minute demo showing all features, well-narrated, demonstrates understanding of privacy implications",
+    meets: "Demo covers core functionality, adequate narration",
+    below: "No demo, or demo does not show the dApp working",
+  },
+]
 
 export function Homework4Content() {
   return (
@@ -451,6 +490,12 @@ export function Homework4Content() {
           </table>
         </div>
       </section>
+
+      {/* AI Grader */}
+      <AIGrader
+        homeworkTitle="Capstone: Student-Chosen Confidential dApp"
+        rubricCriteria={rubricCriteria}
+      />
 
       {/* Submission Guidelines */}
       <section className="mb-8">
