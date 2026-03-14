@@ -1,36 +1,42 @@
-import Link from "next/link";
+import Link from "next/link"
+import { HeroSection } from "@/components/landing/hero-section"
+import { CurriculumOverview } from "@/components/landing/curriculum-overview"
+import { FeaturesSection } from "@/components/landing/features-section"
+import { CtaSection } from "@/components/landing/cta-section"
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-background px-6">
-      <main className="flex flex-col items-center text-center max-w-lg">
-        <p className="text-sm text-text-muted uppercase tracking-widest mb-6">
-          Coming Soon
-        </p>
-
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-text-primary mb-4">
+    <div className="min-h-screen bg-background">
+      {/* Minimal navbar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-sm border-b border-border/50">
+        <Link href="/" className="text-lg font-bold text-primary">
           FHE Academy
-        </h1>
-
-        <p className="text-lg text-text-secondary leading-relaxed mb-8">
-          Learn to build confidential smart contracts with FHEVM.
-          <br />
-          A 4-week hands-on bootcamp for Solidity developers.
-        </p>
-
-        <div className="h-px w-16 bg-border mb-8" />
-
-        <p className="text-sm text-text-muted mb-8">
-          20 lessons &middot; 4 assignments &middot; 1 capstone project
-        </p>
-
+        </Link>
         <Link
           href="/week/1/lesson/why-privacy-matters"
-          className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-hover transition-colors"
+          className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
         >
           Start Learning
         </Link>
+      </nav>
+
+      <main>
+        <HeroSection />
+        <CurriculumOverview />
+        <FeaturesSection />
+        <CtaSection />
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border px-6 py-8 text-center">
+        <p className="text-sm text-text-muted">
+          Built for the{" "}
+          <span className="text-primary font-medium">Zama Bounty Track</span>
+        </p>
+        <p className="text-xs text-text-muted/60 mt-2">
+          Powered by Fully Homomorphic Encryption
+        </p>
+      </footer>
     </div>
-  );
+  )
 }
