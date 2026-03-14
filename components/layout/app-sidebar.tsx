@@ -7,6 +7,7 @@ import {
   BookOpen,
   FileCode,
   FileText,
+  LayoutDashboard,
   Circle,
   CheckCircle,
 } from "lucide-react"
@@ -83,6 +84,17 @@ export function AppSidebar() {
         >
           <FileText className="size-3.5" />
           Syllabus
+        </Link>
+        <Link
+          href="/dashboard"
+          className={cn(
+            "mt-1 flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors",
+            pathname === "/dashboard" &&
+              "text-sidebar-primary bg-sidebar-primary/10"
+          )}
+        >
+          <LayoutDashboard className="size-3.5" />
+          Dashboard
         </Link>
       </SidebarHeader>
 
