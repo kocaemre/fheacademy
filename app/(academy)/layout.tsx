@@ -30,6 +30,9 @@ export default function AcademyLayout({
             <p className="mt-2 max-w-md text-muted-foreground">
               Connect your wallet to access lessons, track your progress, and complete assignments.
             </p>
+            <p className="mt-1 text-xs text-muted-foreground/70">
+              This is a demo build. We recommend using MetaMask for the best experience.
+            </p>
           </div>
           <ConnectButton client={thirdwebClient} />
         </div>
