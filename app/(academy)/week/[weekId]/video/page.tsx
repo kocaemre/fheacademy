@@ -50,7 +50,7 @@ export default async function VideoPage({ params }: VideoPageProps) {
 
   return (
     <div className="px-6 py-8 lg:px-10">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-5xl">
         {/* Breadcrumb */}
         <nav className="mb-6 flex items-center gap-1.5 text-sm text-muted-foreground">
           <Link
