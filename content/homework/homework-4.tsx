@@ -494,6 +494,7 @@ export function Homework4Content() {
       {/* AI Grader */}
       <AIGrader
         homeworkTitle="Capstone: Student-Chosen Confidential dApp"
+        homeworkId="homework-4-capstone-confidential-dapp"
         rubricCriteria={rubricCriteria}
       />
 

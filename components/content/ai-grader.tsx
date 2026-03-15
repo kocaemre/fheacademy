@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { Bot, Check, Copy } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Bot, Check, Copy, Save } from "lucide-react"
+import { useActiveAccount } from "thirdweb/react"
 import {
   Accordion,
   AccordionContent,
@@ -19,6 +20,7 @@ export interface RubricCriterion {
 
 interface AIGraderProps {
   homeworkTitle: string
+  homeworkId: string
   rubricCriteria: RubricCriterion[]
 }
 
@@ -52,13 +54,35 @@ Grade the student's code against each rubric criterion. For each:
 2. Explain what was done well or what's missing
 3. Assign a score within the weight range
 
-End with overall score and summary.`
+End with overall score (out of 100) and summary.`
 }
 
-export function AIGrader({ homeworkTitle, rubricCriteria }: AIGraderProps) {
+export function AIGrader({ homeworkTitle, homeworkId, rubricCriteria }: AIGraderProps) {
+  const account = useActiveAccount()
   const [code, setCode] = useState("")
   const [generatedPrompt, setGeneratedPrompt] = useState("")
   const [copied, setCopied] = useState(false)
+  const [score, setScore] = useState("")
+  const [savedScore, setSavedScore] = useState<number | null>(null)
+  const [saving, setSaving] = useState(false)
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle")
+
+  // Load existing score
+  useEffect(() => {
+    if (!account?.address) return
+    fetch(`/api/grades?wallet=${account.address}`)
+      .then((r) => r.json())
+      .then((data) => {
+        const grade = data.grades?.find(
+          (g: { homework_id: string }) => g.homework_id === homeworkId
+        )
+        if (grade) {
+          setSavedScore(grade.score)
+          setScore(String(grade.score))
+        }
+      })
+      .catch(() => {})
+  }, [account?.address, homeworkId])
 
   function handleGenerate() {
     const prompt = buildPrompt(homeworkTitle, rubricCriteria, code)
@@ -69,6 +93,37 @@ export function AIGrader({ homeworkTitle, rubricCriteria }: AIGraderProps) {
     await navigator.clipboard.writeText(generatedPrompt)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+  }
+
+  async function handleSaveScore() {
+    if (!account?.address || !score.trim()) return
+    const numScore = Number(score)
+    if (isNaN(numScore) || numScore < 0 || numScore > 100) return
+
+    setSaving(true)
+    setSaveStatus("idle")
+    try {
+      const res = await fetch("/api/grades", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          wallet: account.address,
+          homework_id: homeworkId,
+          score: numScore,
+        }),
+      })
+      if (res.ok) {
+        setSavedScore(numScore)
+        setSaveStatus("saved")
+        setTimeout(() => setSaveStatus("idle"), 3000)
+      } else {
+        setSaveStatus("error")
+      }
+    } catch {
+      setSaveStatus("error")
+    } finally {
+      setSaving(false)
+    }
   }
 
   return (
@@ -84,6 +139,11 @@ export function AIGrader({ homeworkTitle, rubricCriteria }: AIGraderProps) {
                 </span>
                 <span className="block text-xs text-muted-foreground">
                   Get AI-powered feedback on your code
+                  {savedScore !== null && (
+                    <span className="ml-2 text-primary font-medium">
+                      Score: {savedScore}/100
+                    </span>
+                  )}
                 </span>
               </div>
             </div>
@@ -151,6 +211,51 @@ export function AIGrader({ homeworkTitle, rubricCriteria }: AIGraderProps) {
                 This prompt works with any AI model -- paste it into ChatGPT,
                 Claude, or any other AI assistant.
               </p>
+
+              {/* Score input + save */}
+              <div className="border-t border-border pt-4">
+                <label className="mb-1.5 block text-sm font-medium text-foreground">
+                  Save Your Score
+                </label>
+                <p className="mb-3 text-xs text-muted-foreground">
+                  After grading with an AI model, enter your overall score below.
+                  {!account && " Connect your wallet to save."}
+                </p>
+                <div className="flex items-center gap-3">
+                  <input
+                    type="number"
+                    min={0}
+                    max={100}
+                    value={score}
+                    onChange={(e) => setScore(e.target.value)}
+                    placeholder="0-100"
+                    className="w-24 rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  />
+                  <span className="text-sm text-muted-foreground">/ 100</span>
+                  <button
+                    onClick={handleSaveScore}
+                    disabled={!account || !score.trim() || saving}
+                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {saveStatus === "saved" ? (
+                      <>
+                        <Check className="size-4" />
+                        Saved
+                      </>
+                    ) : (
+                      <>
+                        <Save className="size-4" />
+                        {saving ? "Saving..." : "Save Score"}
+                      </>
+                    )}
+                  </button>
+                </div>
+                {saveStatus === "error" && (
+                  <p className="mt-2 text-xs text-destructive">
+                    Failed to save. Please try again.
+                  </p>
+                )}
+              </div>
             </div>
           </AccordionContent>
         </AccordionItem>
