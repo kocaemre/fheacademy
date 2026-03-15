@@ -570,6 +570,16 @@ contract ConfidentialERC20 is ZamaEthereumConfig {
         rubricCriteria={rubricCriteria}
       />
 
+      <section className="mt-8 mb-8">
+        <div className="rounded-lg border border-border bg-card/50 p-5 flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-foreground">Stuck? Check the reference solution</p>
+            <p className="text-xs text-muted-foreground mt-1">Try solving it yourself first -- you will learn more that way.</p>
+          </div>
+          <a href="https://github.com/kocaemre/fheacademy/tree/main/hardhat/week-2/solution" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors">View Solution</a>
+        </div>
+      </section>
+
     </>
   )
 }
