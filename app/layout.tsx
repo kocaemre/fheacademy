@@ -16,8 +16,41 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FHE Academy",
-  description: "4-Week FHEVM Developer Bootcamp by Zama",
+  title: {
+    default: "FHE Academy",
+    template: "%s | FHE Academy",
+  },
+  description:
+    "A 4-week interactive bootcamp teaching Web3 developers to build confidential smart contracts with Zama's FHEVM. 20 lessons, 4 assignments, hands-on Hardhat projects.",
+  keywords: [
+    "FHE",
+    "FHEVM",
+    "Zama",
+    "fully homomorphic encryption",
+    "confidential smart contracts",
+    "Solidity",
+    "blockchain privacy",
+    "Web3 bootcamp",
+  ],
+  authors: [{ name: "FHE Academy" }],
+  openGraph: {
+    title: "FHE Academy — Learn to Build Confidential Smart Contracts",
+    description:
+      "4-week FHEVM developer bootcamp by Zama. 20 lessons, interactive quizzes, AI-powered grading, and Hardhat starter projects.",
+    url: "https://fheacademy.vercel.app",
+    siteName: "FHE Academy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FHE Academy — Learn to Build Confidential Smart Contracts",
+    description:
+      "4-week FHEVM developer bootcamp. Master encrypted types, ACL, and confidential DeFi patterns.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
