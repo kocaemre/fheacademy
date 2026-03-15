@@ -20,6 +20,12 @@
 </p>
 
 <p align="center">
+  <a href="https://youtu.be/BNa2t5iOUB0">
+    <img src="https://img.shields.io/badge/Demo%20Video-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video" />
+  </a>
+</p>
+
+<p align="center">
   <a href="#-why">Why</a> &nbsp;&bull;&nbsp;
   <a href="#-curriculum">Curriculum</a> &nbsp;&bull;&nbsp;
   <a href="#-key-features">Features</a> &nbsp;&bull;&nbsp;
