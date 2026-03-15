@@ -5,7 +5,6 @@ import Link from "next/link"
 import {
   CheckCircle2,
   ArrowRight,
-  Wallet,
   Circle,
   BookOpen,
   FileCode,
@@ -19,8 +18,6 @@ import { ProgressBar } from "@/components/ui/progress-bar"
 import { Skeleton } from "@/components/ui/skeleton"
 import { curriculum } from "@/lib/curriculum"
 import { getAllItems, getItemId } from "@/lib/progress"
-import { ConnectButton } from "thirdweb/react"
-import { thirdwebClient } from "@/lib/thirdweb-client"
 
 interface Grade {
   homework_id: string
@@ -83,28 +80,6 @@ export default function DashboardPage() {
           {Array.from({ length: 4 }).map((_, i) => (
             <Skeleton key={i} className="h-48 rounded-xl" />
           ))}
-        </div>
-      </div>
-    )
-  }
-
-  if (!account) {
-    return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center px-4">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <div className="flex size-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-            <Wallet className="size-8" />
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-foreground">
-              Connect Your Wallet
-            </h1>
-            <p className="mt-2 max-w-md text-muted-foreground">
-              Connect your wallet to access the dashboard and track your progress
-              across devices.
-            </p>
-          </div>
-          <ConnectButton client={thirdwebClient} />
         </div>
       </div>
     )
