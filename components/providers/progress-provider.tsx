@@ -23,24 +23,6 @@ interface ProgressContextValue {
 
 const ProgressContext = createContext<ProgressContextValue | null>(null);
 
-const STORAGE_KEY = "fhe-academy-progress";
-
-function readLocalStorage(): Set<string> {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      return new Set(JSON.parse(stored) as string[]);
-    }
-  } catch {
-    // Corrupted data — start fresh
-  }
-  return new Set();
-}
-
-function writeLocalStorage(items: Set<string>) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...items]));
-}
-
 async function fetchSupabaseProgress(
   walletAddress: string
 ): Promise<string[]> {
@@ -75,45 +57,29 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const account = useActiveAccount();
   const walletAddress = account?.address;
 
-  // On mount: load from localStorage
+  // On wallet connect: fetch from Supabase
   useEffect(() => {
-    setCompletedItems(readLocalStorage());
-    setIsLoading(false);
-  }, []);
-
-  // On wallet connect: fetch from Supabase, union merge
-  useEffect(() => {
-    if (!walletAddress) return;
+    if (!walletAddress) {
+      setCompletedItems(new Set());
+      setIsLoading(false);
+      return;
+    }
 
     let cancelled = false;
     isSyncing.current = true;
+    setIsLoading(true);
 
     (async () => {
       try {
         const supabaseItems = await fetchSupabaseProgress(walletAddress);
         if (cancelled) return;
-
-        setCompletedItems((prev) => {
-          // Union merge: combine localStorage set with Supabase array
-          const merged = new Set(prev);
-          for (const item of supabaseItems) {
-            merged.add(item);
-          }
-
-          // Persist merged set to both stores
-          writeLocalStorage(merged);
-          persistToSupabase(walletAddress, merged).catch((err) =>
-            console.error("Failed to sync merged progress to Supabase:", err)
-          );
-
-          return merged;
-        });
+        setCompletedItems(new Set(supabaseItems));
       } catch (err) {
         console.error("Failed to fetch progress from Supabase:", err);
-        // localStorage state is the fallback — no action needed
       } finally {
         if (!cancelled) {
           isSyncing.current = false;
+          setIsLoading(false);
         }
       }
     })();
@@ -125,6 +91,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
   const toggleComplete = useCallback(
     (itemId: string) => {
+      if (!walletAddress) return;
       setCompletedItems((prev) => {
         const next = new Set(prev);
         if (next.has(itemId)) {
@@ -132,17 +99,9 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         } else {
           next.add(itemId);
         }
-
-        // Persist to localStorage immediately
-        writeLocalStorage(next);
-
-        // If wallet connected and not in the middle of a sync, persist to Supabase
-        if (walletAddress && !isSyncing.current) {
-          persistToSupabase(walletAddress, next).catch((err) =>
-            console.error("Failed to persist to Supabase:", err)
-          );
-        }
-
+        persistToSupabase(walletAddress, next).catch((err) =>
+          console.error("Failed to persist to Supabase:", err)
+        );
         return next;
       });
     },
@@ -151,16 +110,14 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
   const markComplete = useCallback(
     (itemId: string) => {
+      if (!walletAddress) return;
       setCompletedItems((prev) => {
         if (prev.has(itemId)) return prev;
         const next = new Set(prev);
         next.add(itemId);
-        writeLocalStorage(next);
-        if (walletAddress && !isSyncing.current) {
-          persistToSupabase(walletAddress, next).catch((err) =>
-            console.error("Failed to persist to Supabase:", err)
-          );
-        }
+        persistToSupabase(walletAddress, next).catch((err) =>
+          console.error("Failed to persist to Supabase:", err)
+        );
         return next;
       });
     },
