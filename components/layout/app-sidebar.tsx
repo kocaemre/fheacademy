@@ -136,6 +136,18 @@ export function AppSidebar() {
                     <CollapsibleContent>
                       <SidebarGroupContent>
                         <SidebarMenuSub>
+                          {/* Week Overview link */}
+                          <SidebarMenuSubItem>
+                            <SidebarMenuSubButton
+                              asChild
+                              isActive={pathname === weekPath}
+                            >
+                              <Link href={weekPath}>
+                                <FileText className="size-3 shrink-0 text-sidebar-primary/40" />
+                                <span className="truncate text-xs">Overview</span>
+                              </Link>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
                           {week.lessons.map((lesson) => {
                             const lessonPath = `/week/${week.id}/lesson/${lesson.slug}`
                             const isLessonActive = pathname === lessonPath
