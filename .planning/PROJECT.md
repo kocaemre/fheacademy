@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A 4-week interactive bootcamp platform that teaches Web3 developers how to build confidential smart contracts using Zama's FHEVM. The platform delivers 20 lessons with side-by-side Solidity-to-FHEVM code comparisons ("Migration Mindset"), 56 inline quiz questions, collapsible instructor notes, and 4 graded homework assignments — all on a Zama-branded dark-themed Next.js 15 platform deployed to Vercel. Built as a Zama Bounty Track submission (deadline: March 15, 2026).
+A 4-week interactive bootcamp platform that teaches Web3 developers how to build confidential smart contracts using Zama's FHEVM. The platform delivers 20 lessons with side-by-side Solidity-to-FHEVM code comparisons ("Migration Mindset"), 56 inline quiz questions, collapsible instructor notes, 4 graded homework assignments with AI-powered grading prompts, wallet-based progress tracking, a Hardhat monorepo with starter/solution contracts, and a polished landing page — all on a Zama-branded dark-themed Next.js 15 platform deployed to Vercel. Submitted for the Zama Bounty Track (March 15, 2026).
 
 ## Core Value
 
@@ -22,19 +22,20 @@ Developers can follow a structured, hands-on curriculum that bridges their exist
 - ✓ Syllabus, week overview, lesson pages — v0.9
 - ✓ Sidebar navigation with week/lesson structure — v0.9
 - ✓ FHEVM v0.9 API accuracy verified (zero deprecated patterns) — v0.9
+- ✓ "Mark as Complete" progress tracking per lesson — v1.0
+- ✓ Wallet-based auth via thirdweb Connect (content publicly accessible) — v1.0
+- ✓ Supabase backend for cross-device progress sync — v1.0
+- ✓ Progress bars (per lesson, per week, overall) — v1.0
+- ✓ AI Grader copy-paste prompt generator for homework feedback (model-agnostic) — v1.0
+- ✓ Hardhat monorepo with starter code + solutions per week — v1.0
+- ✓ Landing page with hero section and Zama-branded CTA — v1.0
+- ✓ Dashboard showing overall progress and "Continue Learning" button — v1.0
+- ✓ Responsive layout — desktop-first with tablet/mobile support — v1.0
+- ✓ Visual FHE concept diagrams (How FHE Works: Encrypt → Compute → Decrypt) — v1.0
 
 ### Active
 
-- [ ] "Mark as Complete" progress tracking per lesson
-- [ ] Wallet-based auth via thirdweb Connect (content publicly accessible)
-- [ ] Supabase backend for cross-device progress sync
-- [ ] Progress bars (per lesson, per week, overall)
-- [ ] AI Grader — copy-paste prompt generator for homework feedback (model-agnostic)
-- [ ] Hardhat monorepo with starter code + solutions per week
-- [ ] Landing page with hero section and Zama-branded CTA
-- [ ] Dashboard showing overall progress and "Continue Learning" button
-- [ ] Responsive layout — desktop-first with tablet/mobile support
-- [ ] Visual FHE concept diagrams
+(None — all v1.0 requirements shipped)
 
 ### Out of Scope
 
@@ -48,20 +49,19 @@ Developers can follow a structured, hands-on curriculum that bridges their exist
 ## Context
 
 - **Competition**: Zama Bounty Track submission. Judged on curriculum quality, FHEVM coverage completeness, practicality for real-world use, homework design, clarity/engagement, and production-readiness.
-- **Deadline**: March 15, 2026 (11 days remaining)
+- **Deadline**: March 15, 2026 (submitted)
 - **Target audience**: Web3 developers with basic Ethereum/Solidity knowledge, no FHE experience required
-- **Shipped v0.9**: 13,790 LOC TypeScript/TSX/CSS across 113 files. Next.js 15, Tailwind v4, shadcn/ui, Shiki syntax highlighting. Deployed at fheacademy.vercel.app.
+- **Shipped v1.0**: 16,733 LOC TypeScript/TSX/CSS/Solidity across 218+ files. Next.js 15, Tailwind v4, shadcn/ui, Shiki, thirdweb Connect, Supabase, Hardhat + fhevm 0.6.2. Deployed at fheacademy.vercel.app.
 - **FHEVM domain**: Teaching encrypted types (ebool, euint8-256, eaddress, ebytes), FHE operations (add, sub, mul, select, rand), ACL system (allow/allowThis), encrypted inputs (externalEuint + inputProof/ZKPoK), async decryption via KMS
 - **Teaching philosophy**: "Migration Mindset" — every lesson shows the transformation from familiar Solidity to FHEVM equivalent, side-by-side
-- **Tech debt**: 4 minor items — orphaned reference TSX files (2), dead shiki wrapper (1), doc discrepancy (1)
+- **Tech debt**: 4 minor items from v0.9 (orphaned reference TSX files, dead shiki wrapper, doc discrepancy) + thirdweb peer dep warning for react-native (irrelevant for web)
 
 ## Constraints
 
-- **Timeline**: 11 days to competition deadline — platform works, need auth + polish
-- **Tech stack**: Next.js 15 (App Router), Tailwind v4 + shadcn/ui, thirdweb Connect, Supabase, Vercel
-- **Design**: Zama-inspired dark theme is critical for jury impression — gold (#F5C518) and purple (#8B5CF6) accents, premium feel
+- **Timeline**: Submitted on deadline (March 15, 2026)
+- **Tech stack**: Next.js 15 (App Router), Tailwind v4 + shadcn/ui, thirdweb Connect, Supabase, Hardhat + fhevm 0.6.2, Vercel
+- **Design**: Zama-inspired dark theme — gold (#F5C518) and purple (#8B5CF6) accents, premium feel
 - **Content format**: Hardcoded TSX pages — no MDX, full component access per lesson
-- **Accounts**: thirdweb and Supabase accounts need to be created — build with env vars initially
 - **FHEVM accuracy**: Content verified against Zama docs — v0.9 audit passed 29/29
 
 ## Key Decisions
@@ -77,9 +77,14 @@ Developers can follow a structured, hands-on curriculum that bridges their exist
 | CVA for component variants | Type-safe variant styling for CalloutBox | ✓ Good — clean 4-variant system (tip/warning/mistake/info) |
 | Dark mode only | Zama brand alignment, reduces design work, jury expectation | ✓ Good — halved design work |
 | Use project plan as content source | Detailed curriculum already written | ✓ Good — all 20 lessons authored in 2 days |
-| thirdweb + Supabase over simpler auth | Cross-device progress sync, wallet-native for Web3 audience | — Pending (Phase 4) |
-| AI Grader as copy-paste prompt | No API key dependency, works with any AI model | — Pending (Phase 5) |
+| thirdweb + Supabase over simpler auth | Cross-device progress sync, wallet-native for Web3 audience | ✓ Good — seamless wallet connect, localStorage fallback |
+| AI Grader as copy-paste prompt | No API key dependency, works with any AI model | ✓ Good — zero friction, works with ChatGPT/Claude/any LLM |
+| ProgressProvider wraps outside SidebarProvider | Progress state available to sidebar indicators | ✓ Good — clean data flow |
+| Client component island pattern | Server pages needing progress use client islands | ✓ Good — minimal client JS |
+| tsconfig excludes hardhat/ | Prevent Next.js build errors from Hardhat config | ✓ Good — clean separation |
+| fhevm 0.6.2 direct import pattern | No fhevm/hardhat submodule, contracts import TFHE.sol directly | ✓ Good — all 8 projects compile |
+| Week 4 capstone as Confidential Voting | Combines all FHEVM patterns: encrypted state, einput, ACL | ✓ Good — comprehensive capstone |
 | Inline instructor notes (not separate page) | Jury sees notes while reviewing lessons | ✓ Good — collapsible accordion per lesson |
 
 ---
-*Last updated: 2026-03-04 after v0.9 milestone*
+*Last updated: 2026-03-15 after v1.0 milestone*

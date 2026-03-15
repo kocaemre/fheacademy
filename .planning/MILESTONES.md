@@ -1,5 +1,25 @@
 # Milestones
 
+## v1.0 Submission (Shipped: 2026-03-15)
+
+**Phases completed:** 2 phases, 5 plans, 12 tasks
+**Commits:** 22 | **Files:** 105 | **LOC:** 16,733 TypeScript/TSX/CSS/Solidity
+**Execution time:** 107 minutes (38 + 12 + 28 + 7 + 22)
+**Timeline:** 11 days (2026-03-04 → 2026-03-15)
+**Git range:** feat(04-01) → feat(05-03)
+
+**Key accomplishments:**
+- Wallet-based auth via thirdweb Connect with Supabase cross-device progress sync and localStorage fallback
+- Progress tracking with MarkComplete toggles, per-lesson/week/overall progress bars, sidebar indicators
+- Landing page with animated gradient hero, 4-week curriculum overview, features showcase, and CTA
+- Dashboard with overall/per-week progress cards and Continue Learning smart navigation
+- AI Grader copy-paste prompt generator on all 4 homework pages (model-agnostic, no API keys)
+- Hardhat monorepo with 8 independent projects — starter code with TODOs + complete FHEVM solutions for all 4 weeks
+
+**UAT:** Phase 4: 8/8 passed | Phase 5: 10/10 passed
+
+---
+
 ## v0.9 Curriculum MVP (Shipped: 2026-03-04)
 
 **Phases completed:** 3 phases, 10 plans
