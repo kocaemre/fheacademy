@@ -564,6 +564,7 @@ contract SealedAuction
       {/* AI Grader */}
       <AIGrader
         homeworkTitle="Sealed-Bid Auction dApp"
+        homeworkId="homework-3-sealed-bid-auction-dapp"
         rubricCriteria={rubricCriteria}
       />
 

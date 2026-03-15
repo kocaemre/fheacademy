@@ -489,6 +489,7 @@ function convertCtoF(
       {/* AI Grader */}
       <AIGrader
         homeworkTitle="Temperature Converter Migration"
+        homeworkId="homework-1-temperature-converter-migration"
         rubricCriteria={rubricCriteria}
       />
 

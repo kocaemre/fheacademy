@@ -566,6 +566,7 @@ contract ConfidentialERC20 is ZamaEthereumConfig {
       {/* AI Grader */}
       <AIGrader
         homeworkTitle="Confidential ERC-20 Token"
+        homeworkId="homework-2-confidential-erc20-token"
         rubricCriteria={rubricCriteria}
       />
 
