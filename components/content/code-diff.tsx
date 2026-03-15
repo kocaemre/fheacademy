@@ -48,8 +48,8 @@ export async function CodeDiff({
   }) as JSX.Element
 
   return (
-    <div className="my-6 rounded-lg border border-code-border overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-2">
+    <div className="my-6 max-w-full rounded-lg border border-code-border overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-w-0">
         {/* Solidity Panel */}
         <div className="min-w-0 md:border-r border-code-border border-b md:border-b-0">
           <div className="px-4 py-2 text-xs font-medium text-text-muted border-b border-code-border bg-code-bg">
