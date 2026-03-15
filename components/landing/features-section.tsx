@@ -1,29 +1,25 @@
-import { Code2, Brain, BarChart3, HelpCircle, Lock, Cpu, Unlock } from "lucide-react"
+import { Lock, Cpu, Unlock } from "lucide-react"
 
 const features = [
   {
-    icon: Code2,
     title: "Side-by-Side Code Comparisons",
     description:
-      "See exactly how Solidity contracts transform into FHEVM. Every lesson highlights the differences between plaintext and encrypted implementations with syntax-highlighted diffs.",
+      "Every lesson shows the transformation from Solidity to FHEVM with syntax-highlighted diffs.",
   },
   {
-    icon: HelpCircle,
     title: "Interactive Quizzes",
     description:
-      "Test your understanding after each lesson with embedded quizzes. Instant feedback helps you identify gaps before moving on to hands-on work.",
+      "Test your understanding after each lesson. Instant feedback before moving to hands-on work.",
   },
   {
-    icon: Brain,
     title: "AI-Powered Grading",
     description:
-      "Submit your homework and get detailed feedback from an AI grader that understands FHEVM patterns. Checks correctness, security, and best practices.",
+      "Get detailed feedback on your homework from any AI model. No API keys required.",
   },
   {
-    icon: BarChart3,
     title: "Progress Tracking",
     description:
-      "Track your completion across all 20 lessons and 4 homework assignments. Your progress syncs with your wallet so you never lose your place.",
+      "Track completion across 20 lessons and 4 assignments. Syncs with your wallet.",
   },
 ]
 
@@ -54,41 +50,28 @@ const fheFlowSteps = [
 export function FeaturesSection() {
   return (
     <section className="px-6 py-24 bg-surface/50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
             Built for Learning
           </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto">
-            Every feature is designed to help you go from zero FHE knowledge to
-            building production-ready confidential dApps.
-          </p>
         </div>
 
-        {/* Platform Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-20">
-          {features.map((feature) => {
-            const Icon = feature.icon
-            return (
-              <div
-                key={feature.title}
-                className="rounded-xl border border-border bg-card p-6 hover:border-primary/20 transition-colors"
-              >
-                <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary mb-4">
-                  <Icon className="size-5" />
-                </div>
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            )
-          })}
+        {/* Clean feature list */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 mb-24">
+          {features.map((feature) => (
+            <div key={feature.title}>
+              <h3 className="text-base font-semibold text-text-primary mb-1">
+                {feature.title}
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
         </div>
 
-        {/* FHE Flow Diagram - Visual FHE concept (DSGN-04) */}
+        {/* FHE Flow Diagram */}
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-text-primary mb-2">
             How FHE Works
