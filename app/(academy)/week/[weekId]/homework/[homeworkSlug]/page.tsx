@@ -85,7 +85,7 @@ export default async function HomeworkPage({ params }: HomeworkPageProps) {
   if (Content) {
     return (
       <div className="px-6 py-8 lg:px-10">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl">
           <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
             <Link
               href={`/week/${week.id}`}

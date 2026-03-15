@@ -28,7 +28,7 @@ export function LessonLayout({
   return (
     <div className="px-6 py-8 lg:px-10">
       {/* Breadcrumb */}
-      <nav className="mb-6 flex items-center gap-1.5 text-sm text-muted-foreground">
+      <nav className="mx-auto mb-6 flex max-w-3xl items-center gap-1.5 text-sm text-muted-foreground">
         <Link
           href={`/week/${weekId}`}
           className="hover:text-foreground transition-colors"
@@ -40,7 +40,7 @@ export function LessonLayout({
       </nav>
 
       {/* Lesson header */}
-      <div className="mb-10 max-w-3xl">
+      <div className="mx-auto mb-10 max-w-3xl">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           {lessonTitle}
         </h1>
@@ -50,19 +50,19 @@ export function LessonLayout({
       </div>
 
       {/* Lesson content -- max-w-3xl for prose, code blocks can break out via lesson-content class */}
-      <div className="lesson-content max-w-3xl">
+      <div className="lesson-content mx-auto max-w-3xl">
         {children}
       </div>
 
       {/* Mark as Complete */}
       {itemId && (
-        <div className="mt-8 mb-4 max-w-3xl">
+        <div className="mx-auto mt-8 mb-4 max-w-3xl">
           <MarkComplete itemId={itemId} />
         </div>
       )}
 
       {/* Prev/Next navigation */}
-      <nav className="mt-16 flex max-w-3xl items-center justify-between border-t border-border pt-6">
+      <nav className="mx-auto mt-16 flex max-w-3xl items-center justify-between border-t border-border pt-6">
         {prev ? (
           <Link
             href={`/week/${prev.weekId}/lesson/${prev.lesson.slug}`}
