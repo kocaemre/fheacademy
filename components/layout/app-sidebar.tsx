@@ -148,6 +148,18 @@ export function AppSidebar() {
                               </Link>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
+                          {/* Week Video link */}
+                          <SidebarMenuSubItem>
+                            <SidebarMenuSubButton
+                              asChild
+                              isActive={pathname === `${weekPath}/video`}
+                            >
+                              <Link href={`${weekPath}/video`}>
+                                <FileText className="size-3 shrink-0 text-sidebar-primary/40" />
+                                <span className="truncate text-xs">Video</span>
+                              </Link>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
                           {week.lessons.map((lesson) => {
                             const lessonPath = `/week/${week.id}/lesson/${lesson.slug}`
                             const isLessonActive = pathname === lessonPath

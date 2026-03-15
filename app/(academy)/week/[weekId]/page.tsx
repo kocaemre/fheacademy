@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import Image from "next/image"
 import Link from "next/link"
 import type { Metadata } from "next"
 import {
@@ -9,6 +10,14 @@ import {
 } from "lucide-react"
 import { getWeek, curriculum } from "@/lib/curriculum"
 import { WeekProgressClient } from "@/components/ui/week-progress-client"
+
+const weekImages: Record<number, string> = {
+  1: "/images/weeks/week1_overview.png",
+  2: "/images/weeks/week2_overview.png",
+  3: "/images/weeks/week3_overview.png",
+  4: "/images/weeks/week4_overview.png",
+}
+
 
 interface WeekPageProps {
   params: Promise<{ weekId: string }>
@@ -71,6 +80,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
   const narrative = weekNarratives[week.id]
   const difficulty = difficultyStyles[week.homework.difficulty]
+  const overviewImage = weekImages[week.id]
 
   return (
     <div className="px-6 py-8 lg:px-10">
@@ -90,6 +100,20 @@ export default async function WeekPage({ params }: WeekPageProps) {
           <p className="text-text-secondary leading-relaxed mb-10">
             {narrative}
           </p>
+        )}
+
+        {/* Week Overview Infographic */}
+        {overviewImage && (
+          <div className="mb-10 overflow-hidden rounded-xl border border-border">
+            <Image
+              src={overviewImage}
+              alt={`Week ${week.id} overview infographic`}
+              width={1200}
+              height={675}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
         )}
 
         {/* Per-Week Progress */}
