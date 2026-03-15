@@ -16,10 +16,25 @@ interface QuizProps {
   question: QuizQuestion
 }
 
+function getStorageKey(questionId: string) {
+  return `quiz-answer-${questionId}`
+}
+
 export function Quiz({ question }: QuizProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const quizCtx = useQuizContext()
+
+  // Restore from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem(getStorageKey(question.id))
+    if (saved !== null) {
+      const idx = parseInt(saved, 10)
+      setSelectedIndex(idx)
+      setIsSubmitted(true)
+      quizCtx?.submitAnswer(question.id, idx === question.correctIndex)
+    }
+  }, [question.id, question.correctIndex]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     quizCtx?.registerQuestion(question.id)
@@ -30,6 +45,7 @@ export function Quiz({ question }: QuizProps) {
   const handleCheck = () => {
     if (selectedIndex === null) return
     setIsSubmitted(true)
+    localStorage.setItem(getStorageKey(question.id), String(selectedIndex))
     quizCtx?.submitAnswer(question.id, selectedIndex === question.correctIndex)
   }
 

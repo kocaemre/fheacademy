@@ -15,6 +15,7 @@ interface ProgressContextValue {
   completedItems: Set<string>;
   isComplete: (itemId: string) => boolean;
   toggleComplete: (itemId: string) => void;
+  markComplete: (itemId: string) => void;
   weekProgress: (weekId: number) => { completed: number; total: number };
   overallProgress: () => { completed: number; total: number };
   isLoading: boolean;
@@ -148,6 +149,24 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [walletAddress]
   );
 
+  const markComplete = useCallback(
+    (itemId: string) => {
+      setCompletedItems((prev) => {
+        if (prev.has(itemId)) return prev;
+        const next = new Set(prev);
+        next.add(itemId);
+        writeLocalStorage(next);
+        if (walletAddress && !isSyncing.current) {
+          persistToSupabase(walletAddress, next).catch((err) =>
+            console.error("Failed to persist to Supabase:", err)
+          );
+        }
+        return next;
+      });
+    },
+    [walletAddress]
+  );
+
   const isComplete = useCallback(
     (itemId: string) => completedItems.has(itemId),
     [completedItems]
@@ -174,6 +193,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         completedItems,
         isComplete,
         toggleComplete,
+        markComplete,
         weekProgress,
         overallProgress,
         isLoading,
