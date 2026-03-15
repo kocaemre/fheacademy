@@ -108,40 +108,30 @@ export function AppSidebar() {
               <Collapsible defaultOpen={isWeekActive}>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <div className="flex items-center">
+                    <CollapsibleTrigger asChild>
                       <SidebarMenuButton
-                        asChild
-                        isActive={pathname === weekPath}
-                        className="flex-1 pr-0"
+                        isActive={isWeekActive}
+                        className="w-full"
                       >
-                        <Link href={weekPath}>
-                          <BookOpen className="size-4 shrink-0 text-sidebar-primary/70" />
-                          <div className="flex-1 min-w-0">
-                            <span className="truncate font-medium block">
-                              Week {week.id}: {week.title}
-                            </span>
-                            {(() => {
-                              const wp = weekProgress(week.id)
-                              return (
-                                <ProgressBar
-                                  completed={wp.completed}
-                                  total={wp.total}
-                                  className="mt-0.5"
-                                />
-                              )
-                            })()}
-                          </div>
-                        </Link>
+                        <BookOpen className="size-4 shrink-0 text-sidebar-primary/70" />
+                        <div className="flex-1 min-w-0">
+                          <span className="truncate font-medium block">
+                            Week {week.id}: {week.title}
+                          </span>
+                          {(() => {
+                            const wp = weekProgress(week.id)
+                            return (
+                              <ProgressBar
+                                completed={wp.completed}
+                                total={wp.total}
+                                className="mt-0.5"
+                              />
+                            )
+                          })()}
+                        </div>
+                        <ChevronDown className="size-4 shrink-0 text-sidebar-foreground/50 transition-transform duration-200 [[data-state=closed]_&]:rotate-[-90deg]" />
                       </SidebarMenuButton>
-                      <CollapsibleTrigger asChild>
-                        <button
-                          className="flex size-8 shrink-0 items-center justify-center rounded-md text-sidebar-foreground/50 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
-                          aria-label={`Toggle Week ${week.id} lessons`}
-                        >
-                          <ChevronDown className="size-4 transition-transform duration-200 [[data-state=closed]_&]:rotate-[-90deg]" />
-                        </button>
-                      </CollapsibleTrigger>
-                    </div>
+                    </CollapsibleTrigger>
 
                     <CollapsibleContent>
                       <SidebarGroupContent>
