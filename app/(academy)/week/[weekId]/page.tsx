@@ -74,7 +74,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
   return (
     <div className="px-6 py-8 lg:px-10">
-      <div className="max-w-3xl">
+      <div className="mx-auto max-w-3xl">
         <p className="text-sm font-medium text-primary mb-2">
           Week {week.id} of {curriculum.length}
         </p>

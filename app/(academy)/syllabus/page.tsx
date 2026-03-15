@@ -45,7 +45,7 @@ const difficultyStyles: Record<
 export default function SyllabusPage() {
   return (
     <div className="px-6 py-8 lg:px-10">
-      <div className="max-w-4xl">
+      <div className="mx-auto max-w-4xl">
         {/* Course Header */}
         <div className="mb-12">
           <div className="flex items-center gap-2 text-primary mb-3">
