@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation"
-import Image from "next/image"
 import Link from "next/link"
 import type { Metadata } from "next"
 import {
@@ -10,6 +9,7 @@ import {
 } from "lucide-react"
 import { getWeek, curriculum } from "@/lib/curriculum"
 import { WeekProgressClient } from "@/components/ui/week-progress-client"
+import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton"
 
 const weekImages: Record<number, string> = {
   1: "/images/weeks/week1_overview.png",
@@ -104,14 +104,13 @@ export default async function WeekPage({ params }: WeekPageProps) {
 
         {/* Week Overview Infographic */}
         {overviewImage && (
-          <div className="mb-10 overflow-hidden rounded-xl border border-border">
-            <Image
+          <div className="mb-10 rounded-xl border border-border">
+            <ImageWithSkeleton
               src={overviewImage}
               alt={`Week ${week.id} overview infographic`}
               width={1200}
               height={675}
-              className="w-full h-auto"
-              priority
+              className="rounded-xl"
             />
           </div>
         )}
