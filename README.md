@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/FHEVM-Bootcamp-F5C518?style=for-the-badge&labelColor=0A0A0F" alt="FHEVM Bootcamp" />
-  <img src="https://img.shields.io/badge/Zama-Builder%20Track%20Winner-8B5CF6?style=for-the-badge&labelColor=0A0A0F" alt="Zama Winner" />
+  <img src="https://img.shields.io/badge/Zama-Bounty%20Track-8B5CF6?style=for-the-badge&labelColor=0A0A0F" alt="Zama Bounty Track" />
   <img src="https://img.shields.io/badge/Next.js%2015-black?style=for-the-badge&logo=next.js" alt="Next.js" />
   <img src="https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity" alt="Solidity" />
 </p>
