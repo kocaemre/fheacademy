@@ -1,6 +1,36 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
 import { curriculum } from "@/lib/curriculum"
 
 export function CurriculumOverview() {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
+    const handleScroll = () => {
+      const rect = section.getBoundingClientRect()
+      const sectionTop = rect.top
+      const sectionHeight = rect.height
+      const windowHeight = window.innerHeight
+
+      // Calculate how far through the section we've scrolled
+      const start = windowHeight * 0.8
+      const end = -sectionHeight + windowHeight * 0.3
+      const total = start - end
+      const current = start - sectionTop
+      const pct = Math.max(0, Math.min(1, current / total))
+      setProgress(pct)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <section className="px-6 py-24">
       <div className="max-w-4xl mx-auto">
@@ -15,38 +45,52 @@ export function CurriculumOverview() {
         </div>
 
         {/* Roadmap Timeline */}
-        <div className="relative">
-          {/* Vertical connector line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/60 via-secondary/60 to-success/60 sm:left-8" />
+        <div className="relative" ref={sectionRef}>
+          {/* Background line (dim) */}
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-border sm:left-8" />
+
+          {/* Animated progress line */}
+          <div
+            className="absolute left-6 top-0 w-px bg-primary transition-none sm:left-8"
+            style={{ height: `${progress * 100}%` }}
+          />
 
           <div className="space-y-0">
             {curriculum.map((week, index) => {
-              const isLast = index === curriculum.length - 1
-              const colors = [
-                { dot: "bg-primary", ring: "ring-primary/20", accent: "text-primary" },
-                { dot: "bg-secondary", ring: "ring-secondary/20", accent: "text-secondary" },
-                { dot: "bg-accent", ring: "ring-accent/20", accent: "text-accent" },
-                { dot: "bg-success", ring: "ring-success/20", accent: "text-success" },
-              ]
-              const color = colors[index] || colors[0]
+              const stepProgress = (index + 0.5) / curriculum.length
+              const isActive = progress >= stepProgress
 
               return (
                 <div key={week.id} className="relative flex gap-5 sm:gap-7 pb-12">
                   {/* Timeline dot */}
                   <div className="relative z-10 flex shrink-0 items-start pt-1">
                     <div
-                      className={`flex size-12 items-center justify-center rounded-full ${color.dot} ring-4 ${color.ring} sm:size-16`}
+                      className={`flex size-12 items-center justify-center rounded-full border-2 transition-all duration-500 sm:size-16 ${
+                        isActive
+                          ? "border-primary bg-primary text-background"
+                          : "border-border bg-card text-muted-foreground"
+                      }`}
                     >
-                      <span className="text-sm font-bold text-background sm:text-base">
+                      <span className="text-sm font-bold sm:text-base">
                         {week.id}
                       </span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className={`flex-1 rounded-xl border border-border bg-card/50 p-5 sm:p-6 ${!isLast ? "" : ""}`}>
+                  <div
+                    className={`flex-1 rounded-xl border p-5 sm:p-6 transition-all duration-500 ${
+                      isActive
+                        ? "border-primary/30 bg-card/80"
+                        : "border-border/50 bg-card/30"
+                    }`}
+                  >
                     <div className="flex items-baseline gap-3 mb-2">
-                      <span className={`text-xs font-semibold uppercase tracking-wider ${color.accent}`}>
+                      <span
+                        className={`text-xs font-semibold uppercase tracking-wider transition-colors duration-500 ${
+                          isActive ? "text-primary" : "text-muted-foreground"
+                        }`}
+                      >
                         Week {week.id}
                       </span>
                       <span className="text-xs text-text-muted">
