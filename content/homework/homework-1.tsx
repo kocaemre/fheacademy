@@ -493,68 +493,6 @@ function convertCtoF(
         rubricCriteria={rubricCriteria}
       />
 
-      {/* Submission Guidelines */}
-      <section className="mb-8">
-        <h2 className="mb-4 text-xl font-semibold text-foreground">
-          Submission Guidelines
-        </h2>
-        <div className="rounded-lg border border-border bg-card p-5">
-          <ul className="space-y-2 text-text-secondary">
-            <li className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
-                1
-              </span>
-              <span className="leading-relaxed">
-                Create a GitHub repository with your Hardhat project
-              </span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
-                2
-              </span>
-              <span className="leading-relaxed">
-                Include the migrated contract file (
-                <code className="rounded bg-code-bg px-1 py-0.5 text-sm font-mono text-primary">
-                  contracts/FHETemperatureConverter.sol
-                </code>
-                )
-              </span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
-                3
-              </span>
-              <span className="leading-relaxed">
-                Include the test file (
-                <code className="rounded bg-code-bg px-1 py-0.5 text-sm font-mono text-primary">
-                  test/FHETemperatureConverter.ts
-                </code>
-                )
-              </span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
-                4
-              </span>
-              <span className="leading-relaxed">
-                Ensure all tests pass in mock mode (
-                <code className="rounded bg-code-bg px-1 py-0.5 text-sm font-mono text-primary">
-                  npx hardhat test
-                </code>
-                ) before submission
-              </span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
-                5
-              </span>
-              <span className="leading-relaxed">
-                Share the repository link for review
-              </span>
-            </li>
-          </ul>
-        </div>
-      </section>
     </>
   )
 }
