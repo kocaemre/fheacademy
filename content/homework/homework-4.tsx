@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { CalloutBox } from "@/components/content/callout-box"
 import { AIGrader, type RubricCriterion } from "@/components/content/ai-grader"
+import { CapstoneSubmission } from "@/components/content/capstone-submission"
 
 const rubricCriteria: RubricCriterion[] = [
   {
@@ -531,8 +532,8 @@ export function Homework4Content() {
                 3
               </span>
               <span className="leading-relaxed">
-                Include a link to your 2-minute demo video (YouTube, Loom, or
-                similar)
+                If deployed to Sepolia, include the contract address and
+                deployment transaction hash in your README
               </span>
             </li>
             <li className="flex items-start gap-2.5">
@@ -540,8 +541,8 @@ export function Homework4Content() {
                 4
               </span>
               <span className="leading-relaxed">
-                If deployed to Sepolia, include the contract address and
-                deployment transaction hash in your README
+                Submit your GitHub repository link below -- your project will be
+                <strong className="text-foreground"> manually reviewed</strong> by our team
               </span>
             </li>
             <li className="flex items-start gap-2.5">
@@ -549,13 +550,16 @@ export function Homework4Content() {
                 5
               </span>
               <span className="leading-relaxed">
-                Submit the GitHub repository link and demo video link via the
-                course submission form
+                After review, you will receive feedback via email and a
+                completion certificate NFT upon passing
               </span>
             </li>
           </ul>
         </div>
       </section>
+
+      {/* Capstone Submission */}
+      <CapstoneSubmission />
     </>
   )
 }
