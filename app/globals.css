@@ -160,16 +160,11 @@
 .lesson-content {
   /* Prose-like spacing for lesson content */
   line-height: 1.75;
+  overflow-wrap: break-word;
 }
 
 .lesson-content > * + * {
   margin-top: 1.5rem;
-}
-
-/* Code blocks within lessons can break out wider for readability */
-.lesson-content .code-breakout {
-  margin-left: -2rem;
-  margin-right: -2rem;
 }
 
 /* Shiki theme integration -- match code-bg variable */
@@ -179,24 +174,34 @@
   border-radius: var(--radius);
   padding: 1rem;
   overflow-x: auto;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  max-width: 100%;
 }
 
 .lesson-content code {
   font-family: var(--font-mono);
+  font-size: 0.8125rem;
 }
 
 /* Shiki theme override -- let CSS variables control background */
+.shiki-wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .shiki-wrapper pre {
   background-color: transparent !important;
   margin: 0;
   padding: 1rem;
   overflow-x: auto;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  max-width: 100%;
 }
 
 .shiki-wrapper code {
   font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  tab-size: 2;
 }
 
 /* Highlighted line for CodeDiff */
