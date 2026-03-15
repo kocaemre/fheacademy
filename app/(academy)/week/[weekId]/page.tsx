@@ -6,6 +6,7 @@ import {
   FileCode,
   Target,
   CheckCircle2,
+  Clock,
 } from "lucide-react"
 import { getWeek, curriculum } from "@/lib/curriculum"
 import { WeekProgressClient } from "@/components/ui/week-progress-client"
@@ -95,6 +96,18 @@ export default async function WeekPage({ params }: WeekPageProps) {
           {week.goal}
         </p>
 
+        {/* Time estimate */}
+        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+          <Clock className="size-4" />
+          <span>
+            {Math.round(
+              (week.lessons.reduce((sum, l) => sum + l.duration, 0) + week.homework.duration) / 60
+            )} hours estimated
+          </span>
+          <span className="size-1 rounded-full bg-border" />
+          <span>{week.lessons.length} lessons + 1 homework</span>
+        </div>
+
         {/* Narrative intro */}
         {narrative && (
           <p className="text-text-secondary leading-relaxed mb-10">
@@ -158,9 +171,11 @@ export default async function WeekPage({ params }: WeekPageProps) {
                   <p className="font-medium text-foreground">
                     {lesson.title}
                   </p>
-                  <p className="text-xs text-muted-foreground capitalize">
-                    {lesson.type}
-                  </p>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="capitalize">{lesson.type}</span>
+                    <span className="size-1 rounded-full bg-border" />
+                    <span>{lesson.duration} min</span>
+                  </div>
                 </div>
               </div>
               <ArrowRight className="size-4 text-muted-foreground group-hover:text-primary transition-colors" />

@@ -84,7 +84,7 @@ export default function SyllabusPage() {
           </div>
 
           {/* Course Info Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
             <div className="rounded-lg border border-border bg-card p-4">
               <p className="text-sm text-muted-foreground mb-1">Duration</p>
               <p className="font-semibold text-foreground">4 Weeks</p>
@@ -97,6 +97,12 @@ export default function SyllabusPage() {
               <p className="text-sm text-muted-foreground mb-1">Homework</p>
               <p className="font-semibold text-foreground">
                 4 Projects + Capstone
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <p className="text-sm text-muted-foreground mb-1">Total Time</p>
+              <p className="font-semibold text-foreground">
+                ~{Math.round(curriculum.reduce((sum, w) => sum + w.lessons.reduce((s, l) => s + l.duration, 0) + w.homework.duration, 0) / 60)} Hours
               </p>
             </div>
           </div>

@@ -3,6 +3,7 @@ export interface Lesson {
   slug: string
   title: string
   type: "conceptual" | "hands-on"
+  duration: number // estimated minutes
 }
 
 export interface Homework {
@@ -11,6 +12,7 @@ export interface Homework {
   description: string
   deliverables: string[]
   difficulty: "beginner" | "intermediate" | "advanced"
+  duration: number // estimated minutes
 }
 
 export interface Week {
@@ -40,30 +42,35 @@ export const curriculum: Week[] = [
         slug: "why-privacy-matters",
         title: "Why Privacy Matters On-Chain",
         type: "conceptual",
+        duration: 20,
       },
       {
         id: "1.2",
         slug: "zama-ecosystem-overview",
         title: "Zama Ecosystem Overview",
         type: "conceptual",
+        duration: 25,
       },
       {
         id: "1.3",
         slug: "development-environment-setup",
         title: "Development Environment Setup",
         type: "hands-on",
+        duration: 30,
       },
       {
         id: "1.4",
         slug: "your-first-fhevm-contract",
         title: "Your First FHEVM Contract: Counter Migration",
         type: "hands-on",
+        duration: 35,
       },
       {
         id: "1.5",
         slug: "testing-encrypted-contracts",
         title: "Testing Encrypted Contracts",
         type: "hands-on",
+        duration: 30,
       },
     ],
     homework: {
@@ -78,6 +85,7 @@ export const curriculum: Week[] = [
         "Set proper ACL permissions with FHE.allowThis and FHE.allow",
       ],
       difficulty: "beginner",
+      duration: 60,
     },
   },
   {
@@ -97,30 +105,35 @@ export const curriculum: Week[] = [
         slug: "encrypted-types-deep-dive",
         title: "Encrypted Types Deep Dive",
         type: "hands-on",
+        duration: 30,
       },
       {
         id: "2.2",
         slug: "operations-on-encrypted-data",
         title: "Operations on Encrypted Data",
         type: "hands-on",
+        duration: 35,
       },
       {
         id: "2.3",
         slug: "encrypted-inputs-and-zkpok",
         title: "Encrypted Inputs and ZKPoK",
         type: "hands-on",
+        duration: 30,
       },
       {
         id: "2.4",
         slug: "access-control-list-system",
         title: "Access Control List (ACL) System",
         type: "hands-on",
+        duration: 35,
       },
       {
         id: "2.5",
         slug: "patterns-and-best-practices",
         title: "Patterns and Best Practices",
         type: "conceptual",
+        duration: 25,
       },
     ],
     homework: {
@@ -135,6 +148,7 @@ export const curriculum: Week[] = [
         "Comprehensive test suite covering mint, transfer, and edge cases",
       ],
       difficulty: "intermediate",
+      duration: 90,
     },
   },
   {
@@ -154,30 +168,35 @@ export const curriculum: Week[] = [
         slug: "the-decryption-mechanism",
         title: "The Decryption Mechanism",
         type: "hands-on",
+        duration: 35,
       },
       {
         id: "3.2",
         slug: "encrypted-control-flow",
         title: "Conditional Logic with FHE.select",
         type: "hands-on",
+        duration: 30,
       },
       {
         id: "3.3",
         slug: "on-chain-randomness",
         title: "On-Chain Randomness",
         type: "hands-on",
+        duration: 25,
       },
       {
         id: "3.4",
         slug: "frontend-integration",
         title: "Frontend Integration",
         type: "hands-on",
+        duration: 40,
       },
       {
         id: "3.5",
         slug: "auction-and-voting-patterns",
         title: "Design Patterns: Auction and Voting",
         type: "hands-on",
+        duration: 35,
       },
     ],
     homework: {
@@ -192,6 +211,7 @@ export const curriculum: Week[] = [
         "At least 3 test scenarios covering the full auction lifecycle",
       ],
       difficulty: "advanced",
+      duration: 120,
     },
   },
   {
@@ -211,30 +231,35 @@ export const curriculum: Week[] = [
         slug: "gas-optimization",
         title: "Gas Optimization for FHE",
         type: "conceptual",
+        duration: 25,
       },
       {
         id: "4.2",
         slug: "security-best-practices",
         title: "Security Best Practices",
         type: "conceptual",
+        duration: 25,
       },
       {
         id: "4.3",
         slug: "confidential-defi-concepts",
         title: "Confidential DeFi Concepts",
         type: "conceptual",
+        duration: 20,
       },
       {
         id: "4.4",
         slug: "testing-strategies",
         title: "Testing Strategies",
         type: "hands-on",
+        duration: 35,
       },
       {
         id: "4.5",
         slug: "testnet-deployment",
         title: "Testnet Deployment",
         type: "hands-on",
+        duration: 40,
       },
     ],
     homework: {
@@ -249,6 +274,7 @@ export const curriculum: Week[] = [
         "README with architecture and FHEVM features used",
       ],
       difficulty: "advanced",
+      duration: 180,
     },
   },
 ]
