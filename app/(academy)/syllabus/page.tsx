@@ -9,6 +9,7 @@ import {
   Code2,
   Shield,
   Rocket,
+  Play,
 } from "lucide-react"
 import { curriculum } from "@/lib/curriculum"
 import { SyllabusWeekProgress } from "@/components/ui/syllabus-week-progress"
@@ -298,6 +299,21 @@ export default function SyllabusPage() {
                         </Link>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Video */}
+                  <div className="mb-5">
+                    <Link
+                      href={`/week/${week.id}/video`}
+                      className="group flex items-center gap-3 rounded-md px-3 py-2 hover:bg-muted/50 transition-colors"
+                    >
+                      <span className="flex size-6 shrink-0 items-center justify-center rounded bg-primary/10">
+                        <Play className="size-3 text-primary" />
+                      </span>
+                      <span className="text-sm text-foreground group-hover:text-primary transition-colors">
+                        Week {week.id} Video
+                      </span>
+                    </Link>
                   </div>
 
                   {/* Homework */}
