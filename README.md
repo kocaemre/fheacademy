@@ -20,8 +20,12 @@
 </p>
 
 <p align="center">
+  <a href="https://youtu.be/nO9Khl7Q4J4">
+    <img src="https://img.shields.io/badge/▶%20Watch%20Demo-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch Demo" />
+  </a>
+  &nbsp;
   <a href="https://youtu.be/BNa2t5iOUB0">
-    <img src="https://img.shields.io/badge/Demo%20Video-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video" />
+    <img src="https://img.shields.io/badge/Platform%20Overview-YouTube-444?style=for-the-badge&logo=youtube&logoColor=white" alt="Platform Overview" />
   </a>
 </p>
 
