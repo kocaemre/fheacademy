@@ -21,7 +21,7 @@ export function HeroSection() {
         </p>
 
         <Link
-          href="/week/1/lesson/why-privacy-matters"
+          href="/dashboard"
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground hover:bg-primary-hover transition-colors"
         >
           Start Learning

@@ -13,7 +13,7 @@ export default function Home() {
           FHE Academy
         </Link>
         <Link
-          href="/week/1/lesson/why-privacy-matters"
+          href="/dashboard"
           className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
         >
           Start Learning
